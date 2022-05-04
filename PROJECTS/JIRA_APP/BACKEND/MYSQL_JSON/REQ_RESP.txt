@@ -1,0 +1,47 @@
+/*PROJECT FETCH*/
+
+
+REQ:		{
+				"id": 2
+  
+			}
+response:
+		[
+			{
+				"txtName": "E-COMMRCE",
+				"txtType": "WEB DEVELOPMENT",
+				"refProjectOwner": 1
+			}
+		]
+/*PROJECT INSERT*/
+REQ:
+			{
+				"txtName": "icampuz",
+				"txtType": "webdevelopment",
+				"refProjectOwner": 1
+			}
+response:
+			{
+				"fieldCount": 0,
+				"affectedRows": 1,
+				"insertId": 4,
+				"serverStatus": 2,
+				"warningCount": 0,
+				"message": "",
+				"protocol41": true,
+				"changedRows": 0
+			}
+			
+			
+/*FetchManagers*/
+REQ:
+			{
+				"refUserRole": 2
+			}
+
+RES:
+		[
+			{
+				"txtUserName": "CHITHRA"
+			}
+		]

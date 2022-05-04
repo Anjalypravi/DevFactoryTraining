@@ -1,0 +1,17 @@
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "password",
+  database: "testdb"
+});
+
+
+con.connect(function(err) {
+    if (err) throw err;
+    con.query("SELECT  id,txtCode,txtName FROM tblCountry", function (err, result, fields) {
+      if (err) throw err;
+      console.log(result);
+    });
+  });
