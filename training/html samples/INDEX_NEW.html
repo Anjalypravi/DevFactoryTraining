@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    
+<link rel="stylesheet" href="./INDEX_NEW_files/style.css"></head>
+
+<body>
+    <div class="fullpge">
+        <div class="container">
+            <div class="headings">
+                <h2>Add an address so you can get paid
+                </h2>
+            </div>
+            <div class="headings">
+                <h3>This will be used as your default business address
+                </h3>
+            </div>
+            <div class="headings">
+                <h4>You can always change this later
+                </h4>
+            </div>
+            <div> <label>Country/Region</label>
+
+                <select class="oneinaline" id="Country">
+                    <option>SELECT</option>
+                    <option>INDIA </option>
+                    <option>CHINA </option>
+                    <option>PAKISTHAN </option>
+                    <option>BANGLADESH </option>
+                </select>
+            </div>
+            <div><label>First Name</label>
+                <input class="twoinaline" type="text">
+
+                <label>Last Name</label>
+                <input class="twoinaline" type="text">
+            </div>
+            <div><label>Address</label><input class="oneinaline" type="text"></div>
+            <div><label>Apartment,suite,etc</label><input class="oneinaline" type="text"></div>
+            <div><p></p></div>
+            <div><label>City</label>
+                <input class="threeinaline" type="text">
+
+                <label>State</label>
+                <input class="threeinaline" type="text">
+
+                <label>PIN Code</label>
+                <input class="threeinaline" type="text">
+            <div><p></p></div>
+            </div>
+            <div><label>Phone</label> 
+                <input class="phone" type="text">
+
+                <label>Business/personal website(optional)</label>
+                <input class="phone" type="text" placeholder="example.com">
+            </div>
+            <div><p></p></div>
+            <div><input type="checkbox"><label>This store is a registered business</label> </div>
+            <div><p></p></div>
+            <div><button class="left-btn"> &lt;-Back </button>
+                 <button class="right-btn"> Enter my store </button>
+            </div>
+
+
+        </div>
+    </div>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
