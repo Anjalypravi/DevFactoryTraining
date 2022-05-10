@@ -1,4 +1,11 @@
+import "./style.css"
+import {useNavigate} from "react-router-dom"
 function LoginPage(){
+    const Navigate =useNavigate();
+    function newclick(e){
+        e.preventDefault();
+        Navigate("/signup");
+    }
     return(
       <div>
      <head>
@@ -19,8 +26,15 @@ function LoginPage(){
             <input type="text" placeholder="Password" />
         </div>
 
-        <div class="styleing"><button>Login</button></div>
+        <div><p></p></div>
+        
+        <div class="styleing"><button>Login</button><p>onclick ={(e)=>{newclick(e);}}classname="new">New user?<p></p></p></div>
+       
 
+
+        <div><p class ="link">New user?</p></div>
+
+        <div><p></p></div>
 
     </div>
 </div>
