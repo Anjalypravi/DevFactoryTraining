@@ -1,13 +1,19 @@
+
+import { useState } from "react";
 import "./style.css";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
+
 function LoginPage() {
-  const navigate = useNavigate();
+    const[username,setusername]= useState("");
+    const[password,setpassword]= useState("");
+ const navigate = useNavigate();
 
   function newclick(e) {
     e.preventDefault();
     navigate("/SignUp");
   }
-  
+
   return (
     <div>
       <head>
@@ -26,31 +32,32 @@ function LoginPage() {
               <label>
                 <b>Username</b>
               </label>
-              <input type="text" placeholder="Username" />
+              <input type="text" placeholder="Username" value={username} />
               <div>
                 <p></p>
               </div>
               <label>
                 <b>Password</b>
               </label>
-              <input type="text" placeholder="Password" />
+              <input type="text" placeholder="Password" value={password} />
             </div>
             <div>
               <p></p>
             </div>
             {
-              <div><button>Login</button>
+              <div>
+                <button>Login</button>
                 <p
-                  onClick={(e)=> {
+                  onClick={(e) => {
                     newclick(e);
-                  } }
-                 className="link"
-                 >
+                  }}
+                  className="link"
+                >
                   New user?
                 </p>
               </div>
             }
-        
+
             <div>
               <p></p>
             </div>
