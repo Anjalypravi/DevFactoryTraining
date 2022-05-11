@@ -11,7 +11,7 @@ function LoginPage() {
 
   function handleclick(e) {
     e.preventDefault();
-    var url = "http://localhost:3000/uservalidation";
+    var url = "http://localhost:8000/uservalidation";
     var req = { username: username, password: password };
     var header = {};
     axios
