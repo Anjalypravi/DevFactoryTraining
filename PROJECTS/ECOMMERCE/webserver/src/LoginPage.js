@@ -20,7 +20,7 @@ function LoginPage() {
         console.log(res.data);
         if (res.data.length > 0) {
           setErrorMessage("Success");
-          navigate("/dashboard");
+          navigate("/Dashboard");
         } else {
           setErrorMessage("Error in Username Or Password");
         }
