@@ -9,6 +9,14 @@ function LoginPage() {
     const[password,setpassword]= useState("");
  const navigate = useNavigate();
 
+ function handleclick(e){
+     e.preventDefault();
+    var url = "http://localhost:8000/uservalidation";
+    var req = { username: username, password: password };
+    var header={};
+    console.log("req=>"+JSON.stringify(req));
+    console.log("url=>"+url);
+
   function newclick(e) {
     e.preventDefault();
     navigate("/SignUp");
@@ -32,21 +40,24 @@ function LoginPage() {
               <label>
                 <b>Username</b>
               </label>
-              <input type="text" placeholder="Username" value={username} />
+              <input type="text" placeholder="Username" value={username} onChange={(e) => {
+            setUsername(e.target.value);
+          }} />
               <div>
                 <p></p>
               </div>
               <label>
                 <b>Password</b>
               </label>
-              <input type="text" placeholder="Password" value={password} />
+              <input type="text" placeholder="Password" value={password} onChange={(e) => {
+            setPassword(e.target.value);}} />
             </div>
             <div>
               <p></p>
             </div>
             {
               <div>
-                <button>Login</button>
+                <button> onClick={handleClick}Login</button>
                 <p
                   onClick={(e) => {
                     newclick(e);
@@ -66,5 +77,6 @@ function LoginPage() {
       </body>
     </div>
   );
+}
 }
 export default LoginPage;
