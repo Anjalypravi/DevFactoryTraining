@@ -1,21 +1,34 @@
-
 import { useState } from "react";
 import "./style.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
-    const[username,setusername]= useState("");
-    const[password,setpassword]= useState("");
- const navigate = useNavigate();
+  const [username, setusername] = useState("");
+  const [password, setpassword] = useState("");
+  const [errormessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
 
- function handleclick(e){
-     e.preventDefault();
-    var url = "http://localhost:8000/uservalidation";
+  function handleclick(e) {
+    e.preventDefault();
+    var url = "http://localhost:3000/uservalidation";
     var req = { username: username, password: password };
-    var header={};
-    console.log("req=>"+JSON.stringify(req));
-    console.log("url=>"+url);
+    var header = {};
+    axios
+      .post(url, req, header)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.length > 0) {
+          setErrorMessage("Success");
+          navigate("/dashboard");
+        } else {
+          setErrorMessage("Error in Username Or Password");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
   function newclick(e) {
     e.preventDefault();
@@ -40,24 +53,35 @@ function LoginPage() {
               <label>
                 <b>Username</b>
               </label>
-              <input type="text" placeholder="Username" value={username} onChange={(e) => {
-            setUsername(e.target.value);
-          }} />
+              <input
+                type="text"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => {
+                  setusername(e.target.value);
+                }}
+              />
               <div>
                 <p></p>
               </div>
               <label>
                 <b>Password</b>
               </label>
-              <input type="text" placeholder="Password" value={password} onChange={(e) => {
-            setPassword(e.target.value);}} />
+              <input
+                type="text"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => {
+                  setpassword(e.target.value);
+                }}
+              />
             </div>
             <div>
               <p></p>
             </div>
             {
               <div>
-                <button> onClick={handleClick}Login</button>
+                <button onClick={handleclick}>Login</button>
                 <p
                   onClick={(e) => {
                     newclick(e);
@@ -78,5 +102,5 @@ function LoginPage() {
     </div>
   );
 }
-}
+
 export default LoginPage;
