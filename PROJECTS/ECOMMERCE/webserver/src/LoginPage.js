@@ -21,7 +21,8 @@ function LoginPage() {
     .then((res) => {
       console.log(res.data);
       if (res.data.token=="") {
-        setErrorMessage("Error in Username Or Password");  
+        setErrorMessage("Error in Username Or Password");
+        
       } else {
         var result=res.data;
 
@@ -77,7 +78,7 @@ console.log("success");
                 <b>Password</b>
               </label>
               <input
-                type="text"
+                type="password"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => {
@@ -86,7 +87,7 @@ console.log("success");
               />
             </div>
             <div>
-              <p></p>
+              <p>{errormessage}</p>
             </div>
             {
               <div>
