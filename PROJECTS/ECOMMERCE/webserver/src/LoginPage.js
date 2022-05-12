@@ -1,7 +1,9 @@
 import { useState } from "react";
-import "./style.css";
+
+
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import {ReactSession} from"react-client-session";
 
 function LoginPage() {
   const [username, setusername] = useState("");
@@ -15,20 +17,27 @@ function LoginPage() {
     var req = { username: username, password: password };
     var header = {};
     axios
-      .post(url, req, header)
-      .then((res) => {
-        console.log(res.data);
-        if (res.data.length > 0) {
-          setErrorMessage("Success");
-          navigate("/Dashboard");
-        } else {
-          setErrorMessage("Error in Username Or Password");
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
+    .post(url, req, header)
+    .then((res) => {
+      console.log(res.data);
+      if (res.data.token=="") {
+        setErrorMessage("Error in Username Or Password");  
+      } else {
+        var result=res.data;
+
+        setErrorMessage("Success");
+console.log("success");
+        ReactSession.set("token", res.data.token);
+        ReactSession.set("username", username);
+        ReactSession.set("password", password);
+       // ReactSession.set("userid", result[0].id);
+        navigate("/dashboard");
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
 
   function newclick(e) {
     e.preventDefault();
@@ -102,5 +111,6 @@ function LoginPage() {
     </div>
   );
 }
+
 
 export default LoginPage;
