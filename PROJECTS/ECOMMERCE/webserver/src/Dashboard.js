@@ -1,14 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./style.css";
+import axios from "axios"
 import {ReactSession} from"react-client-session";
+import {useNavigate} from "react-router-dom"
+
 
 function Dashboard() {
+  const[usr,serUsrName]=useState('');
+const Navigate =useNavigate();
   const [productlist, setProductList] = useState([
     { Id: "1", productName: "ABBCCC", Rate: "100", Tax: "18" },
     { Id: "2", productName: "AABBBC", Rate: "100", Tax: "18" },
     { Id: "3", productName: "AAABBB", Rate: "100", Tax: "18" },
   ]);
-const[usr,serUsrName]=useState('');
+useEffect(()=>{
+  if(ReactSession.get("username")==undefined){
+    Navigate('/')
+  }
+  
+})
   return (
     <div>
       <div className="header">
@@ -51,5 +61,6 @@ const[usr,serUsrName]=useState('');
       </div>
     </div>
   );
+
 }
 export default Dashboard;
