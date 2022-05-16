@@ -1,0 +1,45 @@
+.Container{
+height:100vh ;
+width: 100%;
+background-color: white;
+float: left;
+padding:0%;
+}
+.Outerdiv{
+    margin-left: 10px;
+height:60vh;
+width: 20%;
+background-color:lightgray;
+float:right;
+
+}
+.Username{
+    margin-left: 10px;
+width: 100%;
+height: 10vh;
+padding-bottom: 1px;
+}
+.Password{
+    margin-left: 10px;
+    width: 100%;
+    height: 10vh;
+    padding-bottom: 1px;
+}
+
+.Newuser{
+    width: 100%;
+    color: blue;
+height: 10vh;
+float: left;
+margin-left: 10px;
+background-color: lightgrey;
+}
+.Newuser:hover{
+    color: blue;
+}
+.Login{
+    width: 100%;
+height: 10vh;
+float: left;
+margin-left: 10px;
+}
