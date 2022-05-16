@@ -19,7 +19,7 @@ function LoginPage() {
     axios
     .post(url, req, header)
     .then((res) => {
-      console.log(res.data);
+      console.log(res.token);
       if (res.data.token=="") {
         setErrorMessage("Error in Username Or Password");
         
@@ -86,9 +86,7 @@ console.log("success");
                 }}
               />
             </div>
-            <div>
-              <p>{errormessage}</p>
-            </div>
+            
             {
               <div>
                 <button onClick={handleclick}>Login</button>
@@ -102,7 +100,9 @@ console.log("success");
                 </p>
               </div>
             }
-
+<div>
+             <p>{errormessage}</p>
+            </div>
             <div>
               <p></p>
             </div>

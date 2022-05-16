@@ -1,4 +1,4 @@
-const mysql = require("mysql");
+var mysql = require("mysql");
 
 const express = require("express");
 const app = express();
@@ -44,16 +44,17 @@ app.post("/uservalidation", (req, res) => {
   con.query(sql, function (err, result) {
     if (result.length > 0) {
       const usr = result[0];
-      console.log("usr");
+      
       jwt.sign({ user: usr }, "secretkey", (err, token) => {
         if (err) res.send(err);
         else res.json({ token: token });
-        console.log('token');
+        console.log(token);
       });
     } else {
       res.json({ token: "" });
-      console.log("passwrd");
+      
     }
+    
   });
 });
 app.listen(port, () => {

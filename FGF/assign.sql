@@ -10,5 +10,6 @@ CREATE TABLE tblemployee (
 );
 
 INSERT INTO tblemployee (Emp_id, firstName, lastName,email,age,jobTitle,empstartrddon)
-VALUES 
-('101','Diane','William','dwilliam@gmail.com','40','Sale manager','11/02/2011');
+VALUES ('103','Jeff','Loui','jloui@gmail.com', ,'Sales Rep','2011/03/11');
+
+        

@@ -8,11 +8,7 @@ function Dashboard() {
   const [sample, setSample]=useState('');
   const [usr, setUsrName] = useState("");
   const Navigate = useNavigate();
-  const [productlist, setProductList] = useState([
-    { Id: "1", productName: "ABBCCC", Rate: "100", Tax: "18" },
-    { Id: "2", productName: "AABBBC", Rate: "100", Tax: "18" },
-    { Id: "3", productName: "AAABBB", Rate: "100", Tax: "18" },
-  ]);
+  
   useEffect(() => {
     if (ReactSession.get("username") == undefined) {
       Navigate("/");
@@ -25,14 +21,14 @@ function Dashboard() {
   return (
     <div>
       <div className="header">
-        <label>User</label>
+        <label>{usr}</label>
       </div>
       <div className="menu">
         <label>Menu</label>
 
         <nav>
           <li>Home</li>
-          <li>Products</li>
+          <li>onclick ={}Products</li>
           <li>Orders</li>
           <li>Logout</li>
         </nav>
