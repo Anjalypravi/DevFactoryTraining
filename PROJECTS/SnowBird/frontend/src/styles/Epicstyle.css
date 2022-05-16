@@ -1,0 +1,92 @@
+.outer {
+    width: 100%;
+    height: 100vh;
+  }
+  .firstrow {
+    border-bottom: 1px solid black;
+    text-align: right;
+    height: 5vh;
+  }
+  .firstrow label {
+    color: gray;
+    font-size: small;
+  }
+  .secondrow {
+    width: 100%;
+    height: 100vh;
+  }
+  .usericon {
+    height: 3vh;
+    width: 20px;
+    border-radius: 25px;
+    background-color: blue;
+    float: right;
+  }
+  .firstcolumn {
+    width: 20%;
+    height: 100vh;
+    border-right: 1px solid black;
+    float:left;
+  }
+  .firstcolumn li {
+    list-style: none;
+    text-align: center;
+    padding: 8%;
+    background-color: lightgray;
+    
+  }
+  .firstcolumn li:hover
+  {
+      color: white;
+  }
+  .secondcolumn
+  {
+      width:79%;
+      height: 100vh;
+      float:right;
+  
+  }
+  .usernamerow
+{
+    width:100%;
+    height: 10vh;
+   
+}
+.users
+{
+    height: 3vh;
+    width: 20px;
+    border-radius: 25px;
+    background-color:red;
+    margin: 30%;
+    padding: 10px;
+    margin-top: 10px;
+    
+}
+.statusnamerow
+{
+    width:100%;
+    height:5vh;
+    background-color: aqua;
+}
+.seccolumfirstrow {
+width: 100%;
+height: 15vh;
+float: left;
+background-color: aqua;
+}
+.seccolumfirstrow.button{
+    position:absolute;
+    top: 10px;
+    right:0;
+}
+
+.seccolumsecondrow{
+width: 100%;
+height: 100vh;
+background-color: peachpuff;
+}
+
+.seccolumsecondrow th,td{
+    border: 1px solid black;
+}
