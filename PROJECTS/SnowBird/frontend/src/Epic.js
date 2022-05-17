@@ -30,14 +30,14 @@ function Epic() {
               <button className="buttonright">Create New</button>
             </div>
             <div className="seccolumsecondrow">
-              <table>
+              <table className="tableborder">
                 <thead>
                   <th>#id</th> <th>EpicName</th> <th>Status</th>{" "}
                   <th>ProjectName</th>
                 </thead>
                 <tbody>
-                    <tr><td>10</td>   <td>User1</td>  <td>ToDo</td>  <td>Ecommerce</td></tr>
-                    <tr><td>11</td>   <td>User2</td>  <td>ToDo</td>  <td>Ecommerce</td></tr>
+                    <tr className="trow"><td>10</td>   <td>User1</td>  <td>ToDo</td>  <td>Ecommerce</td></tr>
+                    <tr className="trow"><td>11</td>   <td>User2</td>  <td>ToDo</td>  <td>Ecommerce</td></tr>
                 </tbody>
               </table>
             </div>

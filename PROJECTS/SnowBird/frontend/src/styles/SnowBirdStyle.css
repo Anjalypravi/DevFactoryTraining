@@ -6,11 +6,15 @@ float: left;
 padding:0%;
 }
 .Outerdiv{
+    margin-top: 50px;
     margin-left: 10px;
 height:60vh;
 width: 20%;
 background-color:lightgray;
-float:right;
+float:left;
+padding-top: 10px;
+border: radius 20px;
+border-style:solid;
 
 }
 .Username{
@@ -27,7 +31,7 @@ padding-bottom: 1px;
 }
 
 .Newuser{
-    width: 100%;
+    width: 20%;
     color: blue;
 height: 10vh;
 float: left;
