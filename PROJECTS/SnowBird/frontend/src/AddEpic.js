@@ -40,19 +40,35 @@ function AddEpic() {
                 </lable>
                 <input className="descriptioninput" type="text"></input>
               </div>
-              <div>
+              <div className="statusinput">
                 <lable>
                   <h4>Status</h4>
                 </lable>
-                <input type="text" name="Status" value="ToDo"
-       selectBoxOptions="ToDo;Review;InProgress;Completed;"></input>
+                <select className="select1" id="status-select">
+    <option value="">-- option--</option>
+    <option value="ToDo">ToDo</option>
+    <option value="InProgress">InProgress</option>
+    <option value="Review">Review</option>
+    <option value="Complete">Complete</option>
+    
+</select>
+
               </div>
-              <div>
+              <div className="assignedtoinput">
                 <lable>
                   <h4>Assigned to</h4>
                 </lable>
-                <input className="assignedtoinput" type="text"></input>
-              </div>
+                <select className="select2" id="Name-select">
+    <option value="">-- option--</option>
+    <option value="Ajay">Ajay</option>
+    <option value="Midhun">Midhun</option>
+    <option value="Chithra">Chithra</option>
+    
+</select>
+</div>
+                
+                
+              
             </div>
           </div>
         </div>
