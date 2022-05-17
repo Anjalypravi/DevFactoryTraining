@@ -46,10 +46,10 @@ function EditEpic() {
                 </lable>
                 <select className="select1" id="status-select">
     <option value="">-- option--</option>
-    <option value="ToDo">ToDo</option>
-    <option value="InProgress">InProgress</option>
-    <option value="Review">Review</option>
-    <option value="Complete">Complete</option>
+    <option value="">ToDo</option>
+    <option value="">InProgress</option>
+    <option value="">Review</option>
+    <option value="">Complete</option>
     
 </select>
 
