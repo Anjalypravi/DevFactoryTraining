@@ -93,3 +93,6 @@ margin-top: 5px;
     padding: 10px
     
 }
+.trow :hover{
+    background-color: lightcoral;
+}

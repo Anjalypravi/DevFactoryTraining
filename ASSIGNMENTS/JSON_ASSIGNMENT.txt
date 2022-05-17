@@ -1,0 +1,40 @@
+[
+  {
+    schoool1: {
+      "1st": {
+        1: { ROLLNO: 1, NAME: "ANJ", MARKS: { ENG: "", MATHS: "", HINDI: "" } },
+        2: { ROLLNO: "", NAME: "", MARKS: { ENG: "", MATHS: "", HINDI: "" } },
+        3: { ROLLNO: "", NAME: "", MARKS: { ENG: "", MATHS: "", HINDI: "" } },
+      },
+      "2nd": {
+        1: { ROLLNO: "", NAME: "", MARKS: { ENG: "", MATHS: "", HINDI: "" } },
+        2: { ROLLNO: "", NAME: "", MARKS: { ENG: "", MATHS: "", HINDI: "" } },
+        3: { ROLLNO: "", NAME: "", MARKS: { ENG: "", MATHS: "", HINDI: "" } },
+      },
+      "3rd": {
+        1: { ROLLNO: "", NAME: "", MARKS: { ENG: "", MATHS: "", HINDI: "" } },
+        2: { ROLLNO: "", NAME: "", MARKS: { ENG: "", MATHS: "", HINDI: "" } },
+        3: { ROLLNO: "", NAME: "", MARKS: { ENG: "", MATHS: "", HINDI: "" } },
+      },
+    },
+  },
+  {
+    school2: {
+      "1st": {
+        1: { ROLLNO: "", NAME: "", MARKS: { ENG: "", MATHS: "", HINDI: "" } },
+        2: { ROLLNO: "", NAME: "", MARKS: { ENG: "", MATHS: "", HINDI: "" } },
+        3: { ROLLNO: "", NAME: "", MARKS: { ENG: "", MATHS: "", HINDI: "" } },
+      },
+      "2nd": {
+        1: { ROLLNO: "", NAME: "", MARKS: { ENG: "", MATHS: "", HINDI: "" } },
+        2: { ROLLNO: "", NAME: "", MARKS: { ENG: "", MATHS: "", HINDI: "" } },
+        3: { ROLLNO: "", NAME: "", MARKS: { ENG: "", MATHS: "", HINDI: "" } },
+      },
+      "3rd": {
+        1: { ROLLNO: "", NAME: "", MARKS: "" },
+        2: { ROLLNO: "", NAME: "", MARKS: { ENG: "", MATHS: "", HINDI: "" } },
+        3: { ROLLNO: "", NAME: "", MARKS: { ENG: "", MATHS: "", HINDI: "" } },
+      },
+    },
+  },
+];
