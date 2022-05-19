@@ -49,6 +49,7 @@ app.post("/uservalidation", function (req, res) {
 });
 
 app.post("/projectfetch", function (req, res) {
+    
   var sql = "SELECT  txtName,txtType,refProjectOwner from  tblprojects";
   con.query(sql, function (err, result, fields) {
     if (err) {
@@ -61,6 +62,7 @@ app.post("/projectfetch", function (req, res) {
 });
 
 app.post("/Epiclistfetch", function (req, res) {
+    
     var sql = "SELECT id,txtTitle,txtDescription,txtStatus FROM tblepic;";
     con.query(sql, function (err, result, fields) {
       if (err) {
@@ -72,6 +74,27 @@ app.post("/Epiclistfetch", function (req, res) {
     });
   });
   
+  app.post("/Epicinsert", function (req, res) {
+    var c = req.body.id;
+    var d = req.body.txtTitle;
+var e =req.body.txtDescription;
+var f =req.body.txtStatus;
+var g =req.body.dtEstStartDte;
+var h =req.body.dtEstEndtDte;
+var i =req.body.dtActStartDte;
+var j =req.body.dtActEndtDte;
+var k =req.body.refProjectId;
+var l =req.body.refassignee;
+    var sql = "INSERT into tblepic (id,txtTitle,txtDescription,txtStatus,dtEstStartDte,dtEstEndtDte,dtActStartDte,dtActEndtDte,refProjectId,refassignee)values('"+c+"','"+d+"','"+e+"','"+f+"','"+g+"':'"+h+"','"+i+"','"+j+"','"+k+"','"+l+"')"; 
+    con.query(sql, function (err, result, fields) {
+      if (err) {
+        throw err;
+      } else {
+        console.log(result);
+        res.send(result);
+      }
+    });
+  });
 
 app.listen(
   port,
