@@ -96,6 +96,23 @@ var l =req.body.refassignee;
     });
   });
 
+  app.post("/updateEpic", function (req, res) {
+    var m = req.body.txtStatus;
+    var n = req.body.refassignee;
+    var o=req.body.id;
+  
+    var sql ="update tblepic set txtStatus='"+m+"',refassignee='"+n+"'where id='"+o+"'";
+    con.query(sql, function (err, result, fields) {
+      if (err) {
+        throw err;
+      } else {
+        console.log(result);
+        res.send(result);
+      }
+    });
+  });
+  
+ 
 app.listen(
   port,
   () => {
