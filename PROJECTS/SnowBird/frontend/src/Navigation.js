@@ -3,7 +3,7 @@ import {BrowserRouter,Routes,Route} from "react-router-dom";
 import LoginPage from "./LoginPage";
 import Epic from "./Epic";
 import AddEpic from "./AddEpic";
-import EditEpic from "./EditEpic";
+import EditEpic from "./EditEpic.js";
 
 function Navigation(){
     return(

@@ -1,4 +1,4 @@
-import "./styles/Epicstyle.css";
+import "./styles/SnowBirdStyle.css";
 function EditEpic() {
   return (
     <div>
