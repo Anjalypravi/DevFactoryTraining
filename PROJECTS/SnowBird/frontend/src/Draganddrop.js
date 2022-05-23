@@ -10,8 +10,11 @@ function DragAndDrop() {
     data: ["Three", "Four", "Five"],
     count: 3,
   });
-  const [thirdArray, setThirdArray] = useState({ data: ["Six"], count: 1, });
-  const [fourthArray,setFourthArray]=useState({data:["seven","eight"],count:2})
+  const [thirdArray, setThirdArray] = useState({ data: ["Six"], count: 1 });
+  const [fourthArray, setFourthArray] = useState({
+    data: ["seven", "eight"],
+    count: 2,
+  });
   const [dragElement, setDragElement] = useState({});
   const allowDrop = (e) => {
     e.preventDefault();
@@ -25,8 +28,8 @@ function DragAndDrop() {
       target != startedDiv &&
       (e.target.className == "firstDiv" ||
         e.target.className == "secondDiv" ||
-        e.target.className == "thirdDiv"||
-        e.target.className=="fourtDiv")
+        e.target.className == "thirdDiv" ||
+        e.target.className == "fourthDiv")
     ) {
       if (startedDiv == "firstDiv") {
         delete firstArray.data[dragElement.index];
@@ -34,8 +37,8 @@ function DragAndDrop() {
         delete secondArray.data[dragElement.index];
       } else if (startedDiv == "thirdDiv") {
         delete thirdArray.data[dragElement.index];
-      }else if(startedDiv == "fourthDiv") {
-            delete fourthArray.data[dragElement.index];
+      } else if (startedDiv == "fourthDiv") {
+        delete fourthArray.data[dragElement.index];
       }
       if (target == "firstDiv") {
         var temp = firstArray.data;
@@ -46,7 +49,7 @@ function DragAndDrop() {
         temp.push(dragElement.item);
         setSecondArray({ data: temp, count: temp.length });
       }
-      if (target == "thirdDiv") {
+      else if (target == "thirdDiv") {
         var temp = thirdArray.data;
         temp.push(dragElement.item);
         setThirdArray({ data: temp, count: temp.length });
@@ -113,11 +116,17 @@ function DragAndDrop() {
             </p>
           );
         })}
+        </div>
+        <div
+        className="fourthDiv"
+        onDragOver={(e) => allowDrop(e)}
+        onDrop={(e) => handleDrop(e)}
+      >
         {fourthArray.data.map((item, index) => {
           return (
             <p
               draggable="true"
-              onDragStart={(e) => handleDrag(e, index, "thirdDiv", item)}
+              onDragStart={(e) => handleDrag(e, index, "fourthDiv", item)}
             >
               {item}
             </p>

@@ -28,7 +28,7 @@
     text-align: right;
   }
   .childbg {
-    background-color: #ededed;
+    background-color: #724f4f;
   }
   .parentbg {
     background-color: rgb(116, 116, 255);
@@ -65,12 +65,12 @@
     background-color: #ededed;
   }
   .fourthDiv {
-    width: 200%;
+    width: 20%;
     float: left;
     height: 100vh;
     margin-right: 3%;
     border: 1px solid gray;
-    background-color: #ededed;
+    background-color:pink;
   }
   .drageAndDrop p {
     background-color: red;

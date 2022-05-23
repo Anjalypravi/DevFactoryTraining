@@ -1,3 +1,4 @@
+/* loginPage*/
 .Container{
   height:100vh ;
   width: 100%;
@@ -63,7 +64,8 @@
     
     background-color: lightsteelblue;
   }
-.outer {
+  /******************Dash**************/
+  .outer {
     width: 100%;
     height: 100vh;
   }
@@ -87,98 +89,146 @@
     background-color: blue;
     float: right;
   }
+  
   .firstcolumn {
     width: 20%;
     height: 100vh;
     border-right: 1px solid black;
-    float:left;
+    float: left;
   }
   .firstcolumn li {
     list-style: none;
     text-align: center;
     padding: 8%;
     background-color: lightgray;
-    
   }
-  .firstcolumn li:hover
-  {
-      color: white;
+  .firstcolumn li:hover {
+    color: white;
   }
-  .secondcolumn
-  {
-      width:79%;
-      height: 100vh;
-      float:right;
-  
+  .secondcolumn {
+    width: 79%;
+    height: 100vh;
+    float: right;
   }
-  .usernamerow
-{
-    width:100%;
-    height: 10vh;
+  .usernamerow {
+    width: 100%;
+    height: 15vh;
    
-}
-.users
-{
+  }
+  /* .users label
+  {
+      text-align: center;
+      color: blue;
+  } */
+  .users {
     height: 3vh;
     width: 20px;
     border-radius: 25px;
-    background-color:red;
+    background-color: red;
     margin: 30%;
     padding: 10px;
     margin-top: 10px;
+  }
+  .singleuser {
+    overflow-x: scroll;
+    padding-top: 10%;
+    margin-right: 20%;
+  }
+  .eachuser {
+    padding: 2%;
+    float: left;
+    width: 10%;
+    height: 6vh;
+    text-align: center;
     
-}
-
-.singleuser {
-  overflow-x: scroll;
-  padding-top: 10%;
-  margin-right: 20%;
-}
-.eachuser {
-  padding: 2%;
-  float: left;
-  width: 10%;
-  height: 6vh;
-  text-align: center;
-} 
-.statusnamerow
-{
-    width:100%;
-    height:5vh;
-    background-color: aqua;
-}
-
-.taskbar1 {
-  width: 20%;
-  height: 60vh;
-  border: 1px solid black;
-  float: left;
-}
-.taskbar2 {
-  width: 20%;
-  height: 60vh;
-  border: 1px solid black;
-  float: left;
-  margin-left: 3%;
-}
-.taskbar3 {
-  width: 20%;
-  height: 60vh;
-  border: 1px solid black;
-  float: left;
-  margin-left: 3%;
-}
-
-.taskbar4 {
-  width: 20%;
-  height: 60vh;
-  border: 1px solid black;
-  float: left;
-  margin-left: 3%;
-}
+  
+  }
+  .statusnamerow {
+    width: 100%;
+    height: 12vh;
+    margin-top: 4%;
+  }
+  .taskbar1 {
+    width: 20%;
+    height: 60vh;
+    border: 1px solid black;
+    float: left;
+  }
+  .taskbar2 {
+    width: 20%;
+    height: 60vh;
+    border: 1px solid black;
+    float: left;
+    margin-left: 3%;
+  }
+  .taskbar3 {
+    width: 20%;
+    height: 60vh;
+    border: 1px solid black;
+    float: left;
+    margin-left: 3%;
+  }
+  .taskbar4 {
+    width: 20%;
+    height: 60vh;
+    border: 1px solid black;
+    float: left;
+    margin-left: 3%;
+  }
 
 .statusnamerow label {
   margin-left: 14%;
+}
+
+.userlabel {
+  padding-top: 40px;
+  color: blue;
+}
+
+.prowone {
+  width: 80%;
+  height: 15vh;
+  /* background-color: aquamarine; */
+  /* border-bottom: 1px solid black; */
+  border-left: 5%;
+  padding-top: 5%;
+}
+.prowone label {
+  color: slategrey;
+  font-weight: 900;
+  font-size: x-large;
+  text-align: center;
+  padding-left: 5%;
+}
+.prowone button {
+  float: right;
+  background-color: gray;
+  color: white;
+  border: none;
+  height: 5vh;
+  width: 10%;
+}
+
+.tablerow {
+  /* border-top: 1px solid gray; */
+  width: 80%;
+
+  height: 60vh;
+}
+/* .tablerow th {
+  color: slategray;
+  border-bottom: 1px solid gray;
+  width: 20%;
+  
+} */
+/* .tablerow td {
+  color: slategray;
+  width: 45%;
+  border-bottom: 1px solid gray;
+  padding: 4%;
+} */
+.tablerow tr {
+  text-align: center;
 }
 .seccolumfirstrow {
 width: 100%;
@@ -299,4 +349,153 @@ pbutton {
 }
 .tablerow tr {
   text-align: center;
+}
+.slider{
+  width:30%;
+  margin-left: 25%;
+  height: 150px;
+  overflow-x: scroll;
+  display: flex;
+  
+}
+.psecondrow
+{
+    width:100%;
+    height: 10vh;
+   
+    padding-left: 10%;
+}
+.titlerow
+{
+    
+    width:100%;
+    height:10vh;
+
+}
+.titlerow input{
+   
+    width: 70%;
+    height: 5vh;
+   
+}
+.titlerow label
+{
+    color: gray;
+}
+.descriptiion
+{
+    
+width:100%;
+ height:25vh;
+}
+.descriptiion
+{
+    color: gray;
+}
+.descriptiion input{
+    width:70%;
+    height:20vh;
+    
+}
+.typerow
+{
+    width:100%;
+    
+    height: 10vh;
+}
+.typerow select{
+    width:70%;
+    height: 5vh;
+}
+.typerow label{
+    color: gray;
+}
+.ownerrow
+{
+    
+    width:100%;
+    height: 10vh;
+}
+.ownerrow select{
+    width:70%;
+    height: 5vh;
+}
+.ownerrow label
+{
+    color: gray;
+}
+.ownerrow select
+{
+    color: grey;
+}
+.typerow select{
+    color: grey;
+}
+.tablerow thead.idth
+{
+    width:10%;
+}
+.tablerow.nameth
+{
+    width:20%;
+}
+.slider{
+  width:40%;
+  margin-left: 25%;
+  height: 150px;
+  overflow-x: scroll;
+  display: flex;
+  
+}
+.project
+{
+  background-color:gainsboro;
+}
+.epic
+{ 
+   background-color:antiquewhite;
+}
+.task{
+  background-color:azure;
+}
+.withborder {
+  border: 1px solid gray;
+  border-left: none;
+  border-right: none;
+}
+.right {
+  text-align: right;
+}
+.childbg {
+  background-color: #ededed;
+}
+.parentbg {
+  background-color: rgb(116, 116, 255);
+}
+.constant {
+  width: 5%;
+}
+table {
+  margin-top: 50px;
+  border-collapse: collapse;
+  width: 100%;
+}
+td,
+th {
+  font-size: 20px;
+  text-align: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.constant {
+  width: 10%;
+}
+.none {
+  display: none;
+}
+.display {
+  display: table-row;
+  transition-property: all;
+  transition-duration: 4s;
+  transition-delay: 2s;
 }

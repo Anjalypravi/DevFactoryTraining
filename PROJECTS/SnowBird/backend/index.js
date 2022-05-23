@@ -21,11 +21,11 @@ con.connect(function (err) {
     console.log("connected");
   }
 });
-app.post("/userfetch", function (req, res) {
+app.post('/userfetch', function (req, res) {
   var y = "SELECT txtUserName,txtPassword,refUserRole from tblUsers ";
   con.query(y, function (err, result, fields) {
     if (err) throw err;
-    console.log(result);
+    //console.log(result);
     res.send(result);
   });
 });
@@ -33,8 +33,8 @@ app.post("/userfetch", function (req, res) {
 app.post('/uservalidation', function (req, res) {
   var a = req.body.txtUserName;
   var b = req.body.txtPassword;
-console.log(a);
-console.log(b);
+
+
   var sql =
     "SELECT IFNULL((SELECT  refUserRole from tblUsers where txtUserName ='" +
     a +
@@ -52,7 +52,21 @@ console.log(b);
       
 });
 
-app.post("/projectfetch", function (req, res) {
+
+app.post('/usertaskfetch', function (req, res) {
+    var a = req.body.id;
+    var sql = "select txtTitle,txtStatus from tblTask where refAssignee='" + a + "'";
+    con.query(sql, function (err, result) {
+      if (err) {
+          throw err;
+      }else
+      {
+      res.send(result);
+      console.log(result);
+      }
+    });
+  });
+app.post('/projectfetch', function (req, res) {
     
   var sql = "SELECT  txtName,txtType,refProjectOwner from  tblprojects";
   con.query(sql, function (err, result, fields) {
@@ -67,7 +81,7 @@ app.post("/projectfetch", function (req, res) {
 
 app.post("/Epiclistfetch", function (req, res) {
     
-    var sql = "SELECT id,txtTitle,txtDescription,txtStatus FROM tblepic;";
+    var sql = "SELECT id,txtTitle,txtStatus, FROM tblepic;";
     con.query(sql, function (err, result, fields) {
       if (err) {
         throw err;
@@ -116,6 +130,33 @@ var l =req.body.refassignee;
     });
   });
   
+  app.post('/epicfetch', function (req, res) {
+    
+    var sql = "SELECT id,txtTitle,txtStatus,refProjectId from tblepic";
+    con.query(sql, function (err, result) {
+      if (err) {
+          throw err;
+      }else
+      {
+      res.send(result);
+      console.log(result);
+      }
+    });
+  });
+
+  app.post('/sprintfetch', function (req, res) {
+    
+    var sql = "SELECT id,txtSprintName from tblsprint";
+    con.query(sql, function (err, result) {
+      if (err) {
+          throw err;
+      }else
+      {
+      res.send(result);
+      console.log(result);
+      }
+    });
+  });
 
 app.listen(
   port,
