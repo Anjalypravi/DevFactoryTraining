@@ -23,14 +23,13 @@ function Epic() {
 
           {/* Main outline */}
           <div className="secondcolumn">
-            <div className="seccolumfirstrow">
-              <label>
-                <h2>Epic</h2>
-              </label>
-              <button className="buttonright">Create New</button>
+          <div className="buttonright">
+              <label>Epic</label>
+              <button>CREATE NEW</button>
             </div>
-            <div className="seccolumsecondrow">
-              <table className="tableborder">
+            <div className="tablerow">
+              
+              <table >
                 <thead>
                   <th>#id</th> <th>EpicName</th> <th>Status</th>{" "}
                   <th>ProjectName</th>
@@ -40,7 +39,13 @@ function Epic() {
                     <tr className="trow"><td>11</td>   <td>User2</td>  <td>ToDo</td>  <td>Ecommerce</td></tr>
                 </tbody>
               </table>
+              
             </div>
+            <div className="pbutton">
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+              </div>
           </div>
         </div>
       </div>

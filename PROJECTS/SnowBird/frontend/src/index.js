@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 import Epic from './Epic';
 import LoginPage from './LoginPage';
 import Navigation from './Navigation';
-
+import Draganddrop from './Draganddrop';
+import Newdrop from './Newdrop';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

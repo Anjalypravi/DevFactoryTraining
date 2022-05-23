@@ -3,9 +3,9 @@ import { useState } from "react";
 
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import {ReactSession} from"react-client-session";
+//import {ReactSession} from"react-client-session";
 
-function LoginPage() {
+function Login() {
   const [username, setusername] = useState("");
   const [password, setpassword] = useState("");
   const [errormessage, setErrorMessage] = useState("");
@@ -28,9 +28,9 @@ function LoginPage() {
 
         setErrorMessage("Success");
 console.log("success");
-        ReactSession.set("token", res.data.token);
-        ReactSession.set("username", username);
-        ReactSession.set("password", password);
+        //ReactSession.set("token", res.data.token);
+        //ReactSession.set("username", username);
+       // ReactSession.set("password", password);
        // ReactSession.set("userid", result[0].id);
         navigate("/dashboard");
       }
@@ -89,7 +89,7 @@ console.log("success");
             
             {
               <div>
-                <button onChange={(e)=>handleClick(e)}>Login</button>
+                <button onClick={handleclick}>Login</button>
                 <p
                   onClick={(e) => {
                     newclick(e);
@@ -114,4 +114,4 @@ console.log("success");
 }
 
 
-export default LoginPage;
+export default Login;

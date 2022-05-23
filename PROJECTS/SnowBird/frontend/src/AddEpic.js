@@ -8,7 +8,7 @@ function AddEpic() {
           <div className="usericon"></div>
           <label>User</label>
         </div>
-        <div className="secondrow">
+        <div className="secondrow"> 
           {/* Side navigation menu */}
           <div className="firstcolumn">
             <nav>

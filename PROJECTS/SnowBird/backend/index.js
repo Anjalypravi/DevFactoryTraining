@@ -4,6 +4,8 @@ const { Console } = require("console");
 const app = express();
 const port = 8000;
 app.use(express.json());
+const cors=require('cors');
+app.use(cors());
 
 var con = mysql.createConnection({
   host: "localhost",
@@ -28,24 +30,26 @@ app.post("/userfetch", function (req, res) {
   });
 });
 
-app.post("/uservalidation", function (req, res) {
+app.post('/uservalidation', function (req, res) {
   var a = req.body.txtUserName;
   var b = req.body.txtPassword;
-
+console.log(a);
+console.log(b);
   var sql =
     "SELECT IFNULL((SELECT  refUserRole from tblUsers where txtUserName ='" +
     a +
     "' AND txtPassword ='" +
     b +
     "'),'Not an Existing User') AS VAL";
-  con.query(sql, function (err, result, fields) {
-    if (err) {
-      throw err;
-    } else {
-      console.log(result);
-      res.send(result);
-    }
-  });
+    con.query(sql, function (err, result) {
+        if (err) {
+            throw err;
+          } else {
+            console.log(result);
+            res.send(result);
+          }
+        });
+      
 });
 
 app.post("/projectfetch", function (req, res) {
@@ -112,7 +116,7 @@ var l =req.body.refassignee;
     });
   });
   
- 
+
 app.listen(
   port,
   () => {
