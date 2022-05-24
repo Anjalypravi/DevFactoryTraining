@@ -350,13 +350,31 @@ pbutton {
 .tablerow tr {
   text-align: center;
 }
-.slider{
+.slider {
+  background-color: white;
+  width: 50%;
+  margin-left: 25%;
+  padding-top: 10px;
+  padding-left: 10px;
+  overflow-x: scroll;
+  display: flex;
+  padding-bottom: 10px;
+  padding-right: 5px;
+}
+.slider::-webkit-scrollbar{ 
   width:30%;
   margin-left: 25%;
   height: 150px;
   overflow-x: scroll;
   display: flex;
-  
+  height: 6px;
+  border-radius: 2px;
+  background-color: #ededed; 
+}
+.slider::-webkit-scrollbar-thumb{
+  width: 5px;
+  border-radius: 3px; 
+  background-color: #a3a3a3;
 }
 .psecondrow
 {

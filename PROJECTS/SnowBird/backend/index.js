@@ -21,8 +21,10 @@ con.connect(function (err) {
     console.log("connected");
   }
 });
+
 app.post('/userfetch', function (req, res) {
-  var y = "SELECT txtUserName,txtPassword,refUserRole from tblUsers ";
+        
+  var y = "select tu.txtUserName from tblusers tu join tbluserroles tr on tu.refUserRole=tr.id where tr.txtUserRole='EMPLOYEE'; ";
   con.query(y, function (err, result, fields) {
     if (err) throw err;
     //console.log(result);
@@ -145,11 +147,13 @@ var l =req.body.refassignee;
   });
 
   app.post('/sprintfetch', function (req, res) {
+
     
     var sql = "SELECT id,txtSprintName from tblsprint";
     con.query(sql, function (err, result) {
       if (err) {
           throw err;
+
       }else
       {
       res.send(result);

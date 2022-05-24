@@ -1,5 +1,22 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react";
 import "./styles/SnowBirdStyle.css";
 function AddEpic() {
+  const [user, setUser] = useState([]);
+  useEffect(() => {
+    var url = "http://localhost:8000/userfetch";
+    var request = {};
+    var header = {};
+    axios
+      .post(url, request, header)
+      .then((res) => {
+        console.log(res.data);
+        setUser(res.data);
+      })
+      .catch();
+  }, []);
+
   return (
     <div>
       <div className="outer">
@@ -8,7 +25,7 @@ function AddEpic() {
           <div className="usericon"></div>
           <label>User</label>
         </div>
-        <div className="secondrow"> 
+        <div className="secondrow">
           {/* Side navigation menu */}
           <div className="firstcolumn">
             <nav>
@@ -22,7 +39,7 @@ function AddEpic() {
           </div>
 
           {/* Main outline */}
-            <div className="secondcolumn">
+          <div className="secondcolumn">
             <div className="buttonright">
               <label>AddEpic</label>
               <button>SAVE</button>
@@ -45,30 +62,27 @@ function AddEpic() {
                   <h4>Status</h4>
                 </lable>
                 <select className="select1" id="status-select">
-    <option value="">-- option--</option>
-    <option value="ToDo">ToDo</option>
-    <option value="InProgress">InProgress</option>
-    <option value="Review">Review</option>
-    <option value="Complete">Complete</option>
-    
-</select>
-
+                  <option value="">-- option--</option>
+                  <option value="ToDo">ToDo</option>
+                  <option value="InProgress">InProgress</option>
+                  <option value="Review">Review</option>
+                  <option value="Complete">Complete</option>
+                </select>
               </div>
               <div className="assignedtoinput">
                 <lable>
                   <h4>Assigned to</h4>
                 </lable>
                 <select className="select2" id="Name-select">
-    <option value="">-- option--</option>
-    <option value="Ajay">Ajay</option>
-    <option value="Midhun">Midhun</option>
-    <option value="Chithra">Chithra</option>
-    
-</select>
-</div>
-                
-                
-              
+                  {user.map((item, index) => {
+                    return (
+                      <>
+                        <option>{item.txtUserName}</option>
+                      </>
+                    );
+                  })}
+                </select>
+              </div>
             </div>
           </div>
         </div>

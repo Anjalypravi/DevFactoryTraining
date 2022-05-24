@@ -5,7 +5,7 @@ function Singleuser({ items,getUid}){
   
  // console.log("items" + JSON.stringify(items));
    const id=items.id;
-  //console.log("id"+id);
+  console.log("id"+JSON.stringify(id));
 
 
   return (

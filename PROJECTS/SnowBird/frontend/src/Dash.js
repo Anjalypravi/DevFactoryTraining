@@ -1,4 +1,4 @@
-import { toBeEmpty } from "@testing-library/jest-dom/dist/matchers";
+
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -13,46 +13,48 @@ function Dash() {
     var url = "http://localhost:8000/userfetch";
     var request = {};
     var header = {};
-    axios.post(url, request, header).then((res) => {
-      setArray(res.data);
-
-    }).catch()
-  }, [])
+    axios
+      .post(url, request, header)
+      .then((res) => {
+        setArray(res.data);
+        console.log("array"+JSON.stringify(array));
+      })
+      .catch();
+  }, []);
 
   function tasklist(id) {
-
-
     var url = "http://localhost:8000/usertaskfetch";
     var header = {};
-    var request = { "a": id };
+    var request = {"id": id };
+    console.log("id");
     console.log("req" + JSON.stringify(request));
-    
-    axios.post(url, request, header).then((res) => {
-      console.log(res.data);
-      var len = res.data.length;
-      temp = res.data;
-      console.log(temp);
-      console.log("temp" + JSON.stringify(temp));
-      setTask(res.data);
-      console.log("task" + JSON.stringify(task));
-    })
-    .catch();
 
+    axios
+      .post(url, request, header)
+       
+      .then((res) => {
+        console.log(res.data);
+        var len = res.data.length;
+        console.log("id");
+        temp = res.data;
+        console.log(temp);
+        console.log("temp" + JSON.stringify(temp));
+        setTask(res.data);
+        console.log("task" + JSON.stringify(task));
+      })
+      .catch();
   }
 
   function project() {
-    navigate('/project');
+    navigate("/project");
   }
   return (
-
     <div>
-
       <div className="outer">
         {/* USer name with icon */}
         <div className="firstrow">
           <div className="usericon"> </div>
           <label>User</label>
-
         </div>
         <div className="secondrow">
           {/* Side navigation menu */}
@@ -73,17 +75,13 @@ function Dash() {
             <div className="slider">
               <div className="usernamerow">
                 {array.map((item, index) => {
-                  return <>
-
-                    {<Singleuser items={item} getUid={tasklist} />}
-                  </>
+                  return <>{<Singleuser items={item} getUid={tasklist} />}</>;
                 })}
               </div>
             </div>
             {/* Task status name */}
             <div className="statusnamerow">
-
-              <label >TO DO</label>
+              <label>TO DO</label>
               <label>InProgress</label>
               <label>Review</label>
               <label>Complete</label>
@@ -92,42 +90,42 @@ function Dash() {
             <div className="tasks"></div>
             <div className="taskbar1">
               {task.map((taskitem, taskindex) => {
-
-                if (taskitem.txtStatus == 'to-do')
-                  return <>
-                    <p>{taskitem.txtTitle}</p>
-                  </>
-
+                if (taskitem.txtStatus == "To Do")
+                  return (
+                    <>
+                      <p>{taskitem.txtTitle}</p>
+                    </>
+                  );
               })}
             </div>
             <div className="taskbar2">
               {task.map((taskitem, taskindex) => {
-
-                if (taskitem.txtStatus == 'review')
-                  return <>
-                    <p>{taskitem.txtTitle}</p>
-                  </>
-
+                if (taskitem.txtStatus == "Review")
+                  return (
+                    <>
+                      <p>{taskitem.txtTitle}</p>
+                    </>
+                  );
               })}
             </div>
             <div className="taskbar3">
               {task.map((taskitem, taskindex) => {
-
-                if (taskitem.txtStatus == 'Inprogress')
-                  return <>
-                    <p>{taskitem.txtTitle}</p>
-                  </>
-
+                if (taskitem.txtStatus == "Inprogress")
+                  return (
+                    <>
+                      <p>{taskitem.txtTitle}</p>
+                    </>
+                  );
               })}
             </div>
             <div className="taskbar4">
               {task.map((taskitem, taskindex) => {
-
-                if (taskitem.txtStatus == 'completed')
-                  return <>
-                    <p>{taskitem.txtTitle}</p>
-                  </>
-
+                if (taskitem.txtStatus == "Completed")
+                  return (
+                    <>
+                      <p>{taskitem.txtTitle}</p>
+                    </>
+                  );
               })}
             </div>
           </div>
@@ -136,4 +134,4 @@ function Dash() {
     </div>
   );
 }
-export default Dash
+export default Dash;

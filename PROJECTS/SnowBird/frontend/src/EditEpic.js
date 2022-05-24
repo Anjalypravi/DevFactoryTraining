@@ -1,5 +1,21 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react";
 import "./styles/SnowBirdStyle.css";
 function EditEpic() {
+  const [user, setUser] = useState([]);
+  useEffect(() => {
+    var url = "http://localhost:8000/userfetch";
+    var request = {};
+    var header = {};
+    axios
+      .post(url, request, header)
+      .then((res) => {
+        console.log(res.data);
+        setUser(res.data);
+      })
+      .catch();
+  }, []);
   return (
     <div>
       <div className="outer">
@@ -59,12 +75,14 @@ function EditEpic() {
                   <h4>Assigned to</h4>
                 </lable>
                 <select className="select2" id="Name-select">
-    <option value="">-- option--</option>
-    <option value="Ajay">Ajay</option>
-    <option value="Midhun">Midhun</option>
-    <option value="Chithra">Chithra</option>
-    
-</select>
+                  {user.map((item, index) => {
+                    return (
+                      <>
+                        <option>{item.txtUserName}</option>
+                      </>
+                    );
+                  })}
+                </select>
 </div>
                 
                 
