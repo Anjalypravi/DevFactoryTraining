@@ -22,6 +22,7 @@ con.connect(function (err) {
   }
 });
 
+
 app.post('/userfetch', function (req, res) {
         
   var y = "select tu.txtUserName from tblusers tu join tbluserroles tr on tu.refUserRole=tr.id where tr.txtUserRole='EMPLOYEE'; ";
@@ -149,7 +150,7 @@ var l =req.body.refassignee;
   app.post('/sprintfetch', function (req, res) {
 
     
-    var sql = "SELECT id,txtSprintName from tblsprint";
+    var sql = "SELECT txtSprintName from tblsprint";
     con.query(sql, function (err, result) {
       if (err) {
           throw err;

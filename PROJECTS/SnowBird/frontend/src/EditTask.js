@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react";
 import "./styles/SnowBirdStyle.css";
-function AddTask() {
+function EditTask() {
   const [user, setUser] = useState([]);
   const [sprint,setSprint]=useState([]);
   useEffect(() => {
@@ -53,7 +53,7 @@ function AddTask() {
           {/* Main outline */}
           <div className="secondcolumn">
             <div className="buttonright">
-              <label>AddTask</label>
+              <label>EditTask</label>
               <button>SAVE</button>
             </div>
             <div className="seccolumsecondrow">
@@ -116,4 +116,4 @@ function AddTask() {
     </div>
   );
 }
-export default AddTask;
+export default EditTask;

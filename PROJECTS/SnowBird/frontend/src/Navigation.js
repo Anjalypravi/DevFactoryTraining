@@ -6,6 +6,9 @@ import AddEpic from "./AddEpic";
 import EditEpic from "./EditEpic.js";
 import Draganddrop from "./Draganddrop.js"
 import Dash from "./Dash.js"
+import AddTask from "./AddTask.js";
+import EditTask from "./EditTask.js";
+import Trial from "./Trial.js"
 // import DashDropdown from "./DashDropdown.js"
 
 function Navigation(){
@@ -19,6 +22,9 @@ function Navigation(){
                 <Route path="/EditEpic" element={<EditEpic/>}></Route>
                 <Route path="/Draganddrop" element={<Draganddrop/>}></Route>
                 <Route path="/Dash" element={<Dash/>}></Route>
+                <Route path="/AddTask" element={<AddTask/>}></Route>
+                <Route path="/EditTask" element={<EditTask/>}></Route>
+                <Route path="/Trial" element={<Trial/>}></Route>
                 {/* <Route path="/DashDropdown" element={<DashDropdown/>}></Route> */}
             </Routes>
             </BrowserRouter>

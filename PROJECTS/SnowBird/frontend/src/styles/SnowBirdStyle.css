@@ -290,30 +290,55 @@ margin-top: 5px;
 }
 
 .titleinput{
-    margin-left: 10px;
+    margin-left: 20px;
     margin-right: 5%;
-width:96%;
+width:80%;
 height: 5vh;
+
 }
 .descriptioninput{
-width:96%;
-margin-left: 10px;
+width:80%;
+margin-left: 20px;
     margin-right: 5%;
 height: 20vh;
 }
+.statusinput{
+  margin-left: 20px;
+    margin-right: 10%;
+    width: 96%;
+    height: 10vh;
+}
 .statusinput select{
-  margin-left: 10px;
+  margin-left: 20px;
     margin-right: 5%;
-width: 96%;
+width: 80%;
 height: 5vh;
 }
-.assignedtoinput select{
-  margin-left: 10px;
-    margin-right: 5%;
+.assignedtoinput{
+  margin-left: 20px;
+    margin-right: 10%;
     width: 96%;
-    height: 5vh;
+    height: 10vh;
+}
+.assignedtoinput select{
+  margin-left: 20px;
+    margin-right: 10%;
+    width: 80%;
+    height: vh;
 }
 
+.sprintinput{
+  margin-left: 20px;
+    margin-right: 10%;
+    width: 96%;
+    height: 5vh;
+    }
+.sprintinput select{
+      margin-left: 20px;
+        margin-right: 5%;
+        width: 80%;
+        height: 5vh;
+    }
 pbutton {
   text-align: right;
 }
