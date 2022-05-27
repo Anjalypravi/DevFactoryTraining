@@ -4,7 +4,7 @@ import { useNavigate } from "react";
 import "./styles/SnowBirdStyle.css";
 function AddTask() {
   const [user, setUser] = useState([]);
-  const [sprint,setSprint]=useState([]);
+  const [sprint, setSprint] = useState([]);
   useEffect(() => {
     var url = "http://localhost:8000/userfetch";
     var request = {};

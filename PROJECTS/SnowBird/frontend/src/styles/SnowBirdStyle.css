@@ -1,180 +1,174 @@
 /* loginPage*/
-.Container{
-  height:100vh ;
+.Container {
+  height: 100vh;
   width: 100%;
   background-color: white;
   float: left;
-  padding:0%;
-  }
-  .Outerdiv{
-      margin-top: 50px;
-      margin-left: 10px;
-  height:60vh;
+  padding: 0%;
+}
+.Outerdiv {
+  margin-top: 50px;
+  margin-left: 10px;
+  height: 60vh;
   width: 20%;
-  background-color:lightgray;
-  float:left;
+  background-color: lightgray;
+  float: left;
   padding-top: 10px;
   border-radius: 10px;
-  border: end start radius 50px; 
-  border-style:solid;
-  
-  }
-  .outerdiv.label{
-    margin-left: 20px;
-  }
-  .Username{
-      margin-left: 10px;
+  border: end start radius 50px;
+  border-style: solid;
+}
+.outerdiv.label {
+  margin-left: 20px;
+}
+.Username {
+  margin-left: 10px;
   width: 80%;
   height: 10vh;
   padding-bottom: 1px;
-  }
-  .Username input{
-    width:100%
-  }
-  .Password{
-      margin-left: 10px;
-      width: 100%;
-      height: 10vh;
-    padding-bottom: 5px;
-  }
-  .Password input{
-    width:80%
-    
-  }
-  
-  .Newuser{
-      width: 80%;
-      color: blue;
+}
+.Username input {
+  width: 100%;
+}
+.Password {
+  margin-left: 10px;
+  width: 100%;
+  height: 10vh;
+  padding-bottom: 5px;
+}
+.Password input {
+  width: 80%;
+}
+
+.Newuser {
+  width: 80%;
+  color: blue;
   height: 10vh;
   float: left;
   margin-left: 10px;
   background-color: lightgrey;
-  }
-  .Newuser:hover{
-      color: blue;
-  }
-  .Login{
-      width: 100%;
+}
+.Newuser:hover {
+  color: blue;
+}
+.Login {
+  width: 100%;
   height: 5vh;
   float: left;
   margin-left: 10px;
   padding-top: 10px;
-  }
-  .Login button{
-    
-    background-color: lightsteelblue;
-  }
-  /******************Dash**************/
-  .outer {
-    width: 100%;
-    height: 100vh;
-  }
-  .firstrow {
-    border-bottom: 1px solid black;
-    text-align: right;
-    height: 5vh;
-  }
-  .firstrow label {
-    color: gray;
-    font-size: small;
-  }
-  .secondrow {
-    width: 100%;
-    height: 100vh;
-  }
-  .usericon {
-    height: 3vh;
-    width: 20px;
-    border-radius: 25px;
-    background-color: blue;
-    float: right;
-  }
-  
-  .firstcolumn {
-    width: 20%;
-    height: 100vh;
-    border-right: 1px solid black;
-    float: left;
-  }
-  .firstcolumn li {
-    list-style: none;
-    text-align: center;
-    padding: 8%;
-    background-color: lightgray;
-  }
-  .firstcolumn li:hover {
-    color: white;
-  }
-  .secondcolumn {
-    width: 79%;
-    height: 100vh;
-    float: right;
-  }
-  .usernamerow {
-    width: 100%;
-    height: 15vh;
-   
-  }
-  /* .users label
+}
+.Login button {
+  background-color: lightsteelblue;
+}
+/******************Dash**************/
+.outer {
+  width: 100%;
+  height: 100vh;
+}
+.firstrow {
+  border-bottom: 1px solid black;
+  text-align: right;
+  height: 5vh;
+}
+.firstrow label {
+  color: gray;
+  font-size: small;
+}
+.secondrow {
+  width: 100%;
+  height: 100vh;
+}
+.usericon {
+  height: 3vh;
+  width: 20px;
+  border-radius: 25px;
+  background-color: blue;
+  float: right;
+}
+
+.firstcolumn {
+  width: 20%;
+  height: 100vh;
+  border-right: 1px solid black;
+  float: left;
+}
+.firstcolumn li {
+  list-style: none;
+  text-align: center;
+  padding: 8%;
+  background-color: lightgray;
+}
+.firstcolumn li:hover {
+  color: white;
+}
+.secondcolumn {
+  width: 79%;
+  height: 100vh;
+  float: right;
+}
+.usernamerow {
+  width: 100%;
+  height: 15vh;
+}
+/* .users label
   {
       text-align: center;
       color: blue;
   } */
-  .users {
-    height: 3vh;
-    width: 20px;
-    border-radius: 25px;
-    background-color: red;
-    margin: 30%;
-    padding: 10px;
-    margin-top: 10px;
-  }
-  .singleuser {
-    overflow-x: scroll;
-    padding-top: 10%;
-    margin-right: 20%;
-  }
-  .eachuser {
-    padding: 2%;
-    float: left;
-    width: 10%;
-    height: 6vh;
-    text-align: center;
-    
-  
-  }
-  .statusnamerow {
-    width: 100%;
-    height: 12vh;
-    margin-top: 4%;
-  }
-  .taskbar1 {
-    width: 20%;
-    height: 60vh;
-    border: 1px solid black;
-    float: left;
-  }
-  .taskbar2 {
-    width: 20%;
-    height: 60vh;
-    border: 1px solid black;
-    float: left;
-    margin-left: 3%;
-  }
-  .taskbar3 {
-    width: 20%;
-    height: 60vh;
-    border: 1px solid black;
-    float: left;
-    margin-left: 3%;
-  }
-  .taskbar4 {
-    width: 20%;
-    height: 60vh;
-    border: 1px solid black;
-    float: left;
-    margin-left: 3%;
-  }
+.users {
+  height: 3vh;
+  width: 20px;
+  border-radius: 25px;
+  background-color: red;
+  margin: 30%;
+  padding: 10px;
+  margin-top: 10px;
+}
+.singleuser {
+  overflow-x: scroll;
+  padding-top: 10%;
+  margin-right: 20%;
+}
+.eachuser {
+  padding: 2%;
+  float: left;
+  width: 10%;
+  height: 6vh;
+  text-align: center;
+}
+.statusnamerow {
+  width: 100%;
+  height: 12vh;
+  margin-top: 4%;
+}
+.taskbar1 {
+  width: 20%;
+  height: 60vh;
+  border: 1px solid black;
+  float: left;
+}
+.taskbar2 {
+  width: 20%;
+  height: 60vh;
+  border: 1px solid black;
+  float: left;
+  margin-left: 3%;
+}
+.taskbar3 {
+  width: 20%;
+  height: 60vh;
+  border: 1px solid black;
+  float: left;
+  margin-left: 3%;
+}
+.taskbar4 {
+  width: 20%;
+  height: 60vh;
+  border: 1px solid black;
+  float: left;
+  margin-left: 3%;
+}
 
 .statusnamerow label {
   margin-left: 14%;
@@ -231,114 +225,116 @@
   text-align: center;
 }
 .seccolumfirstrow {
-width: 100%;
-height: 25vh;
-float: left;
-background-color:lightgray;
+  width: 100%;
+  height: 25vh;
+  float: left;
+  background-color: lightgray;
 }
 .userlabel {
   padding-top: 40px;
   color: blue;
 }
 
-.buttonright label{
-    color: slategrey;
+.buttonright label {
+  color: slategrey;
   font-weight: 900;
   font-size: x-large;
   text-align: center;
   padding-left: 5%;
   float: left;
-    
 }
 
-.buttonright button{
-    float:right;
-    background-color: gray;
-    color: white;
-    border: none;
-    height: 5vh;
-    width: 10%;
+.buttonright button {
+  float: right;
+  background-color: gray;
+  color: white;
+  border: none;
+  height: 5vh;
+  width: 10%;
 }
 
+.seccolumsecondrow {
+  padding-top: 50px;
+  width: 100%;
+  height: 100vh;
 
-.seccolumsecondrow{
-padding-top: 50px;
-width: 100%;
-height: 100vh;
-
-margin-top: 5px;
+  margin-top: 5px;
 }
 
-.seccolumsecondrow th{
-    width: 29%;
-    border-top: 10px;
-    border-bottom: 10px;
-    text-align: center;
-    padding: 20px;
-   
-   
+.seccolumsecondrow th {
+  width: 29%;
+  border-top: 10px;
+  border-bottom: 10px;
+  text-align: center;
+  padding: 20px;
 }
 
-.seccolumsecondrow td{
-    width: 29%;
-    border:none;
-    text-align: center;
-    padding: 10px;
+.seccolumsecondrow td {
+  width: 29%;
+  border: none;
+  text-align: center;
+  padding: 10px;
 }
-.trow :hover{
-    background-color: lightgrey;
+.trow :hover {
+  background-color: lightgrey;
 }
 
-.titleinput{
-    margin-left: 20px;
-    margin-right: 5%;
-width:80%;
-height: 5vh;
+.titleinput {
+  margin-left: 50px;
+  margin-right: 5%;
+  width: 70%;
+  height: 5vh;
+}
+.titleinput input {
+  margin-left: 10px;
+  margin-right: 5%;
+  width: 92%;
+  height: 5vh;
+}
 
+.descriptioninput {
+  width: 70%;
+  margin-left: 50px;
+  margin-right: 5%;
+  height: 20vh;
 }
-.descriptioninput{
-width:80%;
-margin-left: 20px;
-    margin-right: 5%;
-height: 20vh;
+.statusinput {
+  margin-left: 50px;
+  margin-right: 5%;
+  width: 76%;
+  height: 10vh;
 }
-.statusinput{
+.statusinput select {
+  margin-left: 10px;
+  margin-right: 5%;
+  width: 92%;
+  height: 5vh;
+}
+.assignedtoinput {
   margin-left: 20px;
-    margin-right: 10%;
-    width: 96%;
-    height: 10vh;
+  margin-right: 10%;
+  width: 96%;
+  height: 10vh;
 }
-.statusinput select{
-  margin-left: 20px;
-    margin-right: 5%;
-width: 80%;
-height: 5vh;
-}
-.assignedtoinput{
-  margin-left: 20px;
-    margin-right: 10%;
-    width: 96%;
-    height: 10vh;
-}
-.assignedtoinput select{
-  margin-left: 20px;
-    margin-right: 10%;
-    width: 80%;
-    height: vh;
+.assignedtoinput select {
+  margin-left: 30px;
+  margin-right: 5%;
+  width: 73%;
+  height: 5vh;
 }
 
-.sprintinput{
+.sprintinput {
   margin-left: 20px;
-    margin-right: 10%;
-    width: 96%;
-    height: 5vh;
-    }
-.sprintinput select{
-      margin-left: 20px;
-        margin-right: 5%;
-        width: 80%;
-        height: 5vh;
-    }
+  margin-right: 10%;
+  width: 96%;
+  height: 5vh;
+}
+.sprintinput select {
+  margin-left: 20px;
+  margin-right: 5%;
+  width: 75%;
+  height: 5vh;
+}
 pbutton {
   text-align: right;
 }
@@ -350,7 +346,7 @@ pbutton {
 .tablerow table {
   /* background-color: aqua; */
   border-top: 1px solid gray;
-  padding-left:2%;
+  padding-left: 2%;
   padding-top: 15%;
 }
 
@@ -364,7 +360,6 @@ pbutton {
   color: slategray;
   border-bottom: 1px solid gray;
   /* width: 20%; */
-  
 }
 .tablerow td {
   color: slategray;
@@ -386,120 +381,99 @@ pbutton {
   padding-bottom: 10px;
   padding-right: 5px;
 }
-.slider::-webkit-scrollbar{ 
-  width:30%;
+.slider::-webkit-scrollbar {
+  width: 30%;
   margin-left: 25%;
   height: 150px;
   overflow-x: scroll;
   display: flex;
   height: 6px;
   border-radius: 2px;
-  background-color: #ededed; 
+  background-color: #ededed;
 }
-.slider::-webkit-scrollbar-thumb{
+.slider::-webkit-scrollbar-thumb {
   width: 5px;
-  border-radius: 3px; 
+  border-radius: 3px;
   background-color: #a3a3a3;
 }
-.psecondrow
-{
-    width:100%;
-    height: 10vh;
-   
-    padding-left: 10%;
-}
-.titlerow
-{
-    
-    width:100%;
-    height:10vh;
+.psecondrow {
+  width: 100%;
+  height: 10vh;
 
+  padding-left: 10%;
 }
-.titlerow input{
-   
-    width: 70%;
-    height: 5vh;
-   
+.titlerow {
+  width: 100%;
+  height: 10vh;
 }
-.titlerow label
-{
-    color: gray;
+.titlerow input {
+  width: 70%;
+  height: 5vh;
 }
-.descriptiion
-{
-    
-width:100%;
- height:25vh;
+.titlerow label {
+  color: gray;
 }
-.descriptiion
-{
-    color: gray;
+.descriptiion {
+  width: 100%;
+  height: 25vh;
 }
-.descriptiion input{
-    width:70%;
-    height:20vh;
-    
+.descriptiion {
+  color: gray;
 }
-.typerow
-{
-    width:100%;
-    
-    height: 10vh;
+.descriptiion input {
+  width: 70%;
+  height: 20vh;
 }
-.typerow select{
-    width:70%;
-    height: 5vh;
+.typerow {
+  width: 100%;
+
+  height: 10vh;
 }
-.typerow label{
-    color: gray;
+.typerow select {
+  width: 70%;
+  height: 5vh;
 }
-.ownerrow
-{
-    
-    width:100%;
-    height: 10vh;
+.typerow label {
+  color: gray;
 }
-.ownerrow select{
-    width:70%;
-    height: 5vh;
+.ownerrow {
+  width: 100%;
+  height: 10vh;
 }
-.ownerrow label
-{
-    color: gray;
+.ownerrow select {
+  width: 70%;
+  height: 5vh;
 }
-.ownerrow select
-{
-    color: grey;
+.ownerrow label {
+  color: gray;
 }
-.typerow select{
-    color: grey;
+.ownerrow select {
+  color: grey;
 }
-.tablerow thead.idth
-{
-    width:10%;
+.typerow select {
+  color: grey;
 }
-.tablerow.nameth
-{
-    width:20%;
+.tablerow thead.idth {
+  width: 10%;
 }
-.slider{
-  width:40%;
+.tablerow.nameth {
+  width: 20%;
+}
+.slider {
+  width: 40%;
   margin-left: 25%;
   height: 150px;
   overflow-x: scroll;
   display: flex;
-  
 }
-.project
-{
-  background-color:gainsboro;
+.project {
+  background-color: gainsboro;
 }
-.epic
-{ 
-   background-color:antiquewhite;
+.epic {
+  background-color: antiquewhite;
 }
-.task{
-  background-color:azure;
+.task {
+  background-color: azure;
 }
 .withborder {
   border: 1px solid gray;
