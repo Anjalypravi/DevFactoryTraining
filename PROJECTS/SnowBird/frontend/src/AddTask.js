@@ -5,6 +5,7 @@ import "./styles/SnowBirdStyle.css";
 function AddTask() {
   const [user, setUser] = useState([]);
   const [sprint, setSprint] = useState([]);
+  const [epic, setEpic] = useState([]);
   useEffect(() => {
     var url = "http://localhost:8000/userfetch";
     var request = {};
@@ -26,6 +27,18 @@ function AddTask() {
       .then((res) => {
         console.log(res.data);
         setSprint(res.data);
+      })
+      .catch();
+  }, []);
+  useEffect(() => {
+    var url = "http://localhost:8000/Epiclistfetch";
+    var request = {};
+    var header = {};
+    axios
+      .post(url, request, header)
+      .then((res) => {
+        console.log(res.data);
+        setEpic(res.data);
       })
       .catch();
   }, []);
@@ -104,6 +117,21 @@ function AddTask() {
                     return (
                       <>
                         <option>{item.txtSprintName}</option>
+                      </>
+                    );
+                  })}
+                </select>
+              </div>
+              <div className="epicinput">
+                <lable>
+                  <h4>Epic Name</h4>
+                </lable>
+                <select className="select2" id="Name-select">
+                  {epic.map((item, index) => {
+                    return (
+                      <>
+                        <option>{item.txtTitle}</option>
+                        console.log(item.txtTitle);
                       </>
                     );
                   })}

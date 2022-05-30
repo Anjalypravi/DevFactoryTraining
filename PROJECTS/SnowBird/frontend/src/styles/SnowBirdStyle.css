@@ -147,6 +147,10 @@
   height: 60vh;
   border: 1px solid black;
   float: left;
+  background-color: aqua;
+}
+.taskbar1 p{
+  background-color: lightsalmon;
 }
 .taskbar2 {
   width: 20%;
@@ -155,12 +159,18 @@
   float: left;
   margin-left: 3%;
 }
+.taskbar2 p{
+  background-color: lightsalmon;
+}
 .taskbar3 {
   width: 20%;
   height: 60vh;
   border: 1px solid black;
   float: left;
   margin-left: 3%;
+}
+.taskbar3 p{
+  background-color: lightsalmon;
 }
 .taskbar4 {
   width: 20%;
@@ -169,7 +179,9 @@
   float: left;
   margin-left: 3%;
 }
-
+.taskbar4 p{
+  background-color: lightsalmon;
+}
 .statusnamerow label {
   margin-left: 14%;
 }
@@ -317,6 +329,7 @@
   height: 10vh;
 }
 .assignedtoinput select {
+  
   margin-left: 30px;
   margin-right: 5%;
   width: 73%;
@@ -324,12 +337,26 @@
 }
 
 .sprintinput {
+  padding-top: 5px;
   margin-left: 20px;
   margin-right: 10%;
   width: 96%;
   height: 5vh;
 }
 .sprintinput select {
+  margin-left: 20px;
+  margin-right: 5%;
+  width: 75%;
+  height: 5vh;
+}
+.epicinput{
+  padding-top: 50px;
+  margin-left: 20px;
+  margin-right: 10%;
+  width: 96%;
+  height: 5vh;
+}
+.epicinput select{
   margin-left: 20px;
   margin-right: 5%;
   width: 75%;
@@ -382,19 +409,19 @@ pbutton {
   padding-right: 5px;
 }
 .slider::-webkit-scrollbar {
-  width: 30%;
+  width: 20%;
   margin-left: 25%;
   height: 150px;
   overflow-x: scroll;
   display: flex;
   height: 6px;
   border-radius: 2px;
-  background-color: #ededed;
+  background-color: pink;
 }
 .slider::-webkit-scrollbar-thumb {
   width: 5px;
   border-radius: 3px;
-  background-color: #a3a3a3;
+  background-color: gray;
 }
 .psecondrow {
   width: 100%;

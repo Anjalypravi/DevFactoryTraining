@@ -25,7 +25,7 @@ con.connect(function (err) {
 
 app.post('/userfetch', function (req, res) {
         
-  var y = "select tu.txtUserName from tblusers tu join tbluserroles tr on tu.refUserRole=tr.id where tr.txtUserRole='EMPLOYEE'; ";
+  var y = "select tu.id,tu.txtUserName from tblusers tu join tbluserroles tr on tu.refUserRole=tr.id where tr.txtUserRole='EMPLOYEE'; ";
   con.query(y, function (err, result, fields) {
     if (err) throw err;
     //console.log(result);
@@ -59,6 +59,7 @@ app.post('/uservalidation', function (req, res) {
 app.post('/usertaskfetch', function (req, res) {
     var a = req.body.id;
     var sql = "select txtTitle,txtStatus from tblTask where refAssignee='" + a + "'";
+    console.log(a);
     con.query(sql, function (err, result) {
       if (err) {
           throw err;
@@ -84,7 +85,7 @@ app.post('/projectfetch', function (req, res) {
 
 app.post("/Epiclistfetch", function (req, res) {
     
-    var sql = "SELECT id,txtTitle,txtStatus, FROM tblepic;";
+    var sql = "SELECT txtTitle FROM tblepic;";
     con.query(sql, function (err, result, fields) {
       if (err) {
         throw err;
