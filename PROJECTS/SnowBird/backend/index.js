@@ -43,7 +43,7 @@ app.post('/uservalidation', function (req, res) {
     a +
     "' AND txtPassword ='" +
     b +
-    "'),'Not an Existing User') AS VAL";
+    "'),0) AS VAL";
     con.query(sql, function (err, result) {
         if (err) {
             throw err;
@@ -163,6 +163,10 @@ var l =req.body.refassignee;
       }
     });
   });
+
+  var a=[{"avf":1}];
+console.log(a[0].avf);
+
 
 app.listen(
   port,

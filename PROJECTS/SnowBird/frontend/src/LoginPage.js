@@ -15,22 +15,30 @@ function LoginPage() {
     var url = "http://localhost:8000/uservalidation";
     var req = { txtUserName:  Username,  txtPassword: Password };
     var header = {};
+    
     axios
     .post(url, req, header)
     .then((res) => {
+      console.log('hiii');
+      console.log(res);
       console.log(res.data);
-      if (res.data=="") {
+      console.log(res.data[0].VAL);
+      var result= res.data[0].VAL;
+      
+      
+      if (result==0) {
         setErrorMessage("Error in Username Or Password");
-        
-      } else {
-        var result=res.data;
+        console.log("req"+result);
+       } else {
+      //  // var result=res.data;
 
-        setErrorMessage("Success");
+       setErrorMessage("Success");
+       console.log("req"+result);
 
-        //ReactSession.set("token", res.data.token);
-       //ReactSession.set("username", Username);
-        //ReactSession.set("password", Password);
-       //ReactSession.set("userid", result[0].id);
+      //   //ReactSession.set("token", res.data.token);
+      //  //ReactSession.set("username", Username);
+      //   //ReactSession.set("password", Password);
+      //  //ReactSession.set("userid", result[0].id);
         navigate("/Dash");
       }
     })
@@ -68,10 +76,12 @@ function LoginPage() {
           <div className="Login">
           <button onClick={handleclick}>Login</button>
           </div>
+          <p>{errormessage}</p>
           <p
                   onClick={(e) => {
                     newclick(e);
                   }}
+                  
                   className="Newuser"
                   >
                     New user?
