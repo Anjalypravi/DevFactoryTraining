@@ -3,18 +3,12 @@ import "./styles/Style.css";
 
 function DragAndDrop() {
   const [firstArray, setFirstArray] = useState({
-    data: ["One", "Two"],
-    count: 2,
+    data: [temp[0].txtTitle],
+    count: 1,
   });
-  const [secondArray, setSecondArray] = useState({
-    data: ["Three", "Four", "Five"],
-    count: 3,
-  });
-  const [thirdArray, setThirdArray] = useState({ data: ["Six"], count: 1 });
-  const [fourthArray, setFourthArray] = useState({
-    data: ["seven", "eight"],
-    count: 2,
-  });
+  const [secondArray, setSecondArray] = useState({ });
+  const [thirdArray, setThirdArray] = useState({  });
+  const [fourthArray, setFourthArray] = useState({ });
   const [dragElement, setDragElement] = useState({});
   const allowDrop = (e) => {
     e.preventDefault();

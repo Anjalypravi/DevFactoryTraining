@@ -121,9 +121,9 @@ var l =req.body.refassignee;
   app.post("/updateEpic", function (req, res) {
     var m = req.body.txtStatus;
     var n = req.body.refassignee;
-    var o=req.body.id;
-  
-    var sql ="update tblepic set txtStatus='"+m+"',refassignee='"+n+"'where id='"+o+"'";
+    var o = req.body.id;
+    
+    var sql ="update tblepic set  txtStatus='"+m+"',refassignee='"+n+"'where id='"+o+"'";
     con.query(sql, function (err, result, fields) {
       if (err) {
         throw err;
@@ -164,9 +164,8 @@ var l =req.body.refassignee;
     });
   });
 
-  var a=[{"avf":1}];
-console.log(a[0].avf);
-
+  var a= {txtTitle:'Task1',txtStatus:'To Do'}
+  console.log (a.txtTitle);
 
 app.listen(
   port,

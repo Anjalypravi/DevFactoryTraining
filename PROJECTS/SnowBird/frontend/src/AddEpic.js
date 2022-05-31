@@ -47,19 +47,19 @@ function AddEpic() {
             <div className="seccolumsecondrow">
               <div>
                 <lable>
-                  <h4>Title</h4>
+                  <h4 className="titleinput">Title</h4>
                 </lable>
                 <input className="titleinput" type="text"></input>
               </div>
               <div>
                 <lable>
-                  <h4>Description</h4>
+                  <h4 className="titleinput">Description</h4>
                 </lable>
                 <input className="descriptioninput" type="text"></input>
               </div>
               <div className="statusinput">
                 <lable>
-                  <h4>Status</h4>
+                  <h4 className="titleinput">Status</h4>
                 </lable>
                 <select className="select1" id="status-select">
                   <option value="">-- option--</option>
@@ -71,7 +71,7 @@ function AddEpic() {
               </div>
               <div className="assignedtoinput">
                 <lable>
-                  <h4>Assigned to</h4>
+                  <h4 className="assignedtoinput">Assigned to</h4>
                 </lable>
                 <select className="select2" id="Name-select">
                   {user.map((item, index) => {
