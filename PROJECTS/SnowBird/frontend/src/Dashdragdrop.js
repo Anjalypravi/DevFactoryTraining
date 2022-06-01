@@ -6,9 +6,9 @@ function DragAndDrop() {
     data: [temp[0].txtTitle],
     count: 1,
   });
-  const [secondArray, setSecondArray] = useState({ });
-  const [thirdArray, setThirdArray] = useState({  });
-  const [fourthArray, setFourthArray] = useState({ });
+  const [secondArray, setSecondArray] = useState({});
+  const [thirdArray, setThirdArray] = useState({});
+  const [fourthArray, setFourthArray] = useState({});
   const [dragElement, setDragElement] = useState({});
   const allowDrop = (e) => {
     e.preventDefault();
@@ -42,8 +42,7 @@ function DragAndDrop() {
         var temp = secondArray.data;
         temp.push(dragElement.item);
         setSecondArray({ data: temp, count: temp.length });
-      }
-      else if (target == "taskbar3") {
+      } else if (target == "taskbar3") {
         var temp = thirdArray.data;
         temp.push(dragElement.item);
         setThirdArray({ data: temp, count: temp.length });
@@ -110,8 +109,8 @@ function DragAndDrop() {
             </p>
           );
         })}
-        </div>
-        <div
+      </div>
+      <div
         className="taskbar4"
         onDragOver={(e) => allowDrop(e)}
         onDrop={(e) => handleDrop(e)}

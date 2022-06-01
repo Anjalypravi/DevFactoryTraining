@@ -70,22 +70,21 @@ function EditTask() {
               <button>SAVE</button>
             </div>
             <div className="seccolumsecondrow">
-              <div>
-                <lable>
-                  <h4>Title</h4>
-                </lable>
-                <input className="titleinput" type="text"></input>
+              <div className="titleinput">
+                <lable>Title</lable><br></br>
+                <input  type="text"></input>
               </div>
+              <br></br>
               <div>
-                <lable>
-                  <h4>Description</h4>
-                </lable>
+                <lable className="titleinput">
+                   Description
+                </lable><br></br>
                 <input className="descriptioninput" type="text"></input>
               </div>
-              <div className="statusinput">
-                <lable>
-                  <h4>Status</h4>
-                </lable>
+<br></br>
+<div className="statusin">
+                <label>Status</label>
+                <br></br>
                 <select className="select1" id="status-select">
                   <option value="">-- option--</option>
                   <option value="ToDo">ToDo</option>
@@ -94,25 +93,28 @@ function EditTask() {
                   <option value="Complete">Complete</option>
                 </select>
               </div>
-              <div className="assignedtoinput">
-                <lable>
-                  <h4>Assigned to</h4>
-                </lable>
-                <select className="select2" id="Name-select">
+              <br></br>
+              <div className="assignuser">
+                <label>Assigned to</label>
+                <br></br>
+                <select
+                  onChange={(e) => {
+                    setUser(e.target.value);
+                  }}
+                >
                   {user.map((item, index) => {
-                    return (
-                      <>
-                        <option>{item.txtUserName}</option>
-                      </>
-                    );
+                    return <option>{item.txtUserName}</option>;
                   })}
                 </select>
               </div>
               <div className="sprintinput">
-                <lable>
-                  <h4>Sprint Name</h4>
-                </lable>
-                <select className="select2" id="Name-select">
+                <label>Sprint Name</label>
+                <br></br>
+                <select
+                  onChange={(e) => {
+                    setSprint(e.target.value);
+                  }}
+                >
                   {sprint.map((item, index) => {
                     return (
                       <>
@@ -123,10 +125,13 @@ function EditTask() {
                 </select>
               </div>
               <div className="epicinput">
-                <lable>
-                  <h4>Epic Name</h4>
-                </lable>
-                <select className="select2" id="Name-select">
+                <label>Epic Name</label>
+                <br></br>
+                <select
+                  onChange={(e) => {
+                    setEpic(e.target.value);
+                  }}
+                >
                   {epic.map((item, index) => {
                     return (
                       <>
