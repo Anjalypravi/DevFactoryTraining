@@ -66,7 +66,7 @@ app.post('/usertaskfetch', function (req, res) {
       }else
       {
       res.send(result);
-      console.log(result);
+     // console.log(result);
       }
     });
   });

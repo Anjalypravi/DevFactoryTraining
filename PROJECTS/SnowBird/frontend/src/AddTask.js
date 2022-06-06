@@ -119,30 +119,20 @@ function AddTask() {
               <br></br>
               <br></br>
               <div className="statusin">
-                <label>Status</label>
-                
-                <select
-                  className="select1"
-                  id="status-select"
-                  onChange={(e) => {
-                    setStatus(e.target.value);
-                  }}
-                >
+                <label className="lb1">Status</label> <label className="lb2">Estimated Hours</label>
+                <br></br>
+                <select className="select1" id="status-select">
+                  <option value="">-- option--</option>
                   <option value="ToDo">ToDo</option>
                   <option value="InProgress">InProgress</option>
                   <option value="Review">Review</option>
                   <option value="Complete">Complete</option>
                 </select>
-
-                <label>Estimated Hours</label>
-
-                <input
-                  type="text"
-                  onChange={(e) => {
+                <input type="text" onChange={(e) => {
                     setHours(e.target.value);
-                  }}
-                ></input>
+                  }}></input>
               </div>
+              <br></br>
               <div className="assignuser">
                 <label>Assigned to</label>
                 <br></br>

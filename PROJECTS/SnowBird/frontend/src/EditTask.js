@@ -9,6 +9,7 @@ function EditTask() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState([]);
   const [status, setStatus] = useState([]);
+  const [hours, setHours] = useState(" ");
   useEffect(() => {
     var url = "http://localhost:8000/userfetch";
     var request = {};
@@ -93,14 +94,14 @@ function EditTask() {
               </div>
               <br></br>
               <div>
-                <lable className="titleinput">
+                <label className="titleinput">
                    Description
-                </lable><br></br>
+                </label><br></br>
                 <input className="descriptioninput" type="text"></input>
               </div>
 <br></br>
 <div className="statusin">
-                <label>Status</label>
+                <label className="lb1">Status</label> <label className="lb2">Estimated Hours</label>
                 <br></br>
                 <select className="select1" id="status-select">
                   <option value="">-- option--</option>
@@ -109,6 +110,9 @@ function EditTask() {
                   <option value="Review">Review</option>
                   <option value="Complete">Complete</option>
                 </select>
+                <input type="text" onChange={(e) => {
+                    setHours(e.target.value);
+                  }}></input>
               </div>
               <br></br>
               <div className="assignuser">

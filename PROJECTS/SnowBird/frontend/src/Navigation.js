@@ -10,7 +10,8 @@ import AddTask from "./AddTask.js";
 import EditTask from "./EditTask.js";
 import Trial from "./Trial.js"
 import Dashdragdrop from "./Dashdragdrop.js"
-
+import DashBoard from "./DashBoard.js"
+ 
 function Navigation(){
     return(
         <div>
@@ -26,6 +27,7 @@ function Navigation(){
                 <Route path="/EditTask" element={<EditTask/>}></Route>
                 <Route path="/Trial" element={<Trial/>}></Route>
                 <Route path="/Dashdragdrop" element={<Dashdragdrop/>}></Route>
+                <Route path="/DashBoard" element={<DashBoard/>}></Route>
             </Routes>
             </BrowserRouter>
         </div>
