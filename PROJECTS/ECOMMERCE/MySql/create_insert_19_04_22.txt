@@ -1,0 +1,117 @@
+//CREATE ALL TABLES
+---------------------------------------------
+CREATE TABLE tblCountry (
+    id int NOT NULL AUTO_INCREMENT,
+    txtCode varchar(50) NOT NULL,
+    txtName varchar(255) NOT NULL, 
+    PRIMARY KEY (id)
+);
+----------------------------------
+CREATE TABLE tblState (
+    id int NOT NULL AUTO_INCREMENT,
+	refCountryId int,
+    txtName varchar(50),
+    PRIMARY KEY (id),
+    FOREIGN KEY (refCountryid) REFERENCES tblcountry(id)
+);
+------------------------------------
+CREATE TABLE tblUsers (
+    id int NOT NULL AUTO_INCREMENT,
+      txtUserName	varchar(50),
+      txtPassword	varchar(50),
+      dtCreatedon	datetime,
+      dtUpdatedon	datetime,
+      isregistrd    boolean,
+    PRIMARY KEY (id)
+);
+---------------------------------------------
+CREATE TABLE tblProducts (
+    id INT NOT NULL AUTO_INCREMENT,
+    txtName VARCHAR(50),
+    txtRate VARCHAR(50),
+    txtTax VARCHAR(50),
+    PRIMARY KEY (id)
+);
+--------------------------------------------
+CREATE TABLE tblOdrHdr (
+    id int NOT NULL AUTO_INCREMENT,
+      iOrdNo	int,
+       dtOrd datetime,
+       refUserId  int,
+       txtStatus	varchar(50),
+	   dtCreatedon	datetime,
+       dtUpdatedon	datetime,
+    PRIMARY KEY (id)
+);
+----------------------------------------------
+CREATE TABLE tblOdrChld (
+    id INT NOT NULL AUTO_INCREMENT,
+    refOdrHdrId INT,
+    refProductId INT,
+    txtQnty varchar(50),
+    txtRate varchar(50),
+    txtAmnt varchar(50),
+    PRIMARY KEY (id),
+    FOREIGN KEY (refOdrHdrId)
+        REFERENCES tblOdrHdr (id)
+);
+---------------------------------------------------
+//INSERT DATAS IN TO TABLES
+---------------------------------------------------
+INSERT INTO tblCountry(txtCode,txtName)
+VALUES 
+('AF','Afghanistan'),
+ ('IND','India'),
+ ('CH','china'),
+ ('PK','Pakisthan'),
+ ('GEM','Germany');
+ --------------------------------------------------
+ INSERT INTO tblState(refCountryId,txtName)
+VALUES 
+('2','kerala'),
+ ('1','tamilnadu'),
+ ('3','gujarath'),
+ ('2','asdf'),
+ ('5','Berlin');
+ ---------------------------------------------------
+ INSERT INTO tblproducts(txtName,txtRate,txtTax)
+VALUES 
+('abc','12.50','2.60'),
+ ('def','75.00','1.5'),
+ ('ghi','128.00','1.90'),
+ ('jkl','11.75','5.05'),
+ ('mno','224.50','3.00');
+ --------------------------------------------------
+ INSERT INTO tblusers(txtUserName,txtPassword,dtCreatedon,dtUpdatedon,isregistrd)
+VALUES 
+('Anjaly','itzme','2021-07-04','2022-01-16','0'),
+ ('Ajay','you','2021-10-05','2022-02-10','1'),
+ ('Hari','happy','2021-11-10','2022-03-03','1'),
+ ('krishnan','study','2021-06-19','2022-04-11','0'),
+ ('Praveen','travel','2021-07-24','2022-04-07','1');
+-----------------------------------------------------
+INSERT INTO tblOdrHdr(iOrdNo,dtOrd,refUserId,txtStatus,dtCreatedon,dtUpdatedon)
+VALUES 
+('1723','2022-01-19','1','Delivered','2021-07-04','2022-01-16'),
+ ('3450','2011-02-12','2','pending','2021-10-05','2022-02-10'),
+ ('3467','2022-03-09','3','pending','2021-11-10','2022-03-03'),
+ ('9876','2022-05-15','3','delivered','2021-06-19','2022-04-11'),
+ ('2345','2022-04-21','1','pending','2021-07-24','2022-04-07');
+ -------------------------------------------------------------
+ INSERT INTO tblOdrChld (refOdrHdrId,refProductId,txtQnty,txtRate,txtAmnt)
+VALUES 
+('1','1','2','12.50','2.60'),
+ ('2','2','1','12.50','2.60'),
+ ('3','3','4','12.50','2.60'),
+ ('2','4','10','12.50','2.60'),
+ ('1','5','12','12.50','2.60');
+ ---------------------------------------------------------------
+//SELECT DATAS
+SELECT  id,txtCode,txtName from tblcountry;
+select refCountryId,txtName from tblstate where refCountryId = 2;
+
+----------------------------------------------------------
+UPDATE tblcountry
+SET txtCode = 'MN',  txtName = 'MYANMAR'
+WHERE id = 1;
+------------------------------------------------------------
