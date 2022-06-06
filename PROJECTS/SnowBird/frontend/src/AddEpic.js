@@ -4,6 +4,9 @@ import { useNavigate } from "react";
 import "./styles/SnowBirdStyle.css";
 function AddEpic() {
   const [user, setUser] = useState([]);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState([]);
+  const [status, setStatus] = useState([]);
   useEffect(() => {
     var url = "http://localhost:8000/userfetch";
     var request = {};
@@ -16,6 +19,21 @@ function AddEpic() {
       })
       .catch();
   }, []);
+  function handleClick(e) {
+    console.log("hi");
+    var url = "http://localhost:8000/Epicinsert";      
+    var req = {txtTitle:title,txtDescription:description,txtStatus:status,refassignee:4};
+    var header = {};
+    axios
+    .post(url, req, header)
+    .then((res) => {
+      console.log(res.data);
+      setUser(res.data);
+          })
+    .catch();
+        alert('Success')
+};
+  
 
   return (
     <div>
@@ -42,26 +60,26 @@ function AddEpic() {
           <div className="secondcolumn">
             <div className="buttonright">
               <label>AddEpic</label>
-              <button>SAVE</button>
+              <button onClick={handleClick}>SAVE</button>
             </div>
             <div className="seccolumsecondrow">
               <div className="titleinput">
-                <lable>Title</lable><br></br>
-                <input  type="text"></input>
+                <lable>Title</lable>
+                <br></br>
+                <input type="text" onChange={(e)=>{setTitle(e.target.value)}}></input>
               </div>
               <br></br>
               <div>
-                <lable className="titleinput">
-                   Description
-                </lable><br></br>
-                <input className="descriptioninput" type="text"></input>
+                <lable className="titleinput">Description</lable>
+                <br></br>
+                <input className="descriptioninput" type="text" onChange={(e)=>{setDescription(e.target.value)}}></input>
               </div>
-<br></br>
+              <br></br>
               <div className="statusin">
                 <label>Status</label>
                 <br></br>
-                <select className="select1" id="status-select">
-                  <option value="">-- option--</option>
+                <select className="select1" id="status-select" onChange={(e)=>{setStatus(e.target.value)}}>
+                  
                   <option value="ToDo">ToDo</option>
                   <option value="InProgress">InProgress</option>
                   <option value="Review">Review</option>
@@ -72,13 +90,14 @@ function AddEpic() {
               <div className="assignuser">
                 <label>Assigned to</label>
                 <br></br>
-                <select
-                  onChange={(e) => {
+                <select onSelect={(e) => {
                     setUser(e.target.value);
-                  }}
-                >
+                  }}>
+                  {/* onChange={(e) => {
+                    setUser(e.target.value);
+                  }} */}
                   {user.map((item, index) => {
-                    return <option>{item.txtUserName}</option>;
+                    return <option value={item.id}>{item.txtUserName}</option>;
                   })}
                 </select>
               </div>

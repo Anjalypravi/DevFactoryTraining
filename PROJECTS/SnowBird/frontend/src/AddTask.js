@@ -6,6 +6,10 @@ function AddTask() {
   const [user, setUser] = useState([]);
   const [sprint, setSprint] = useState([]);
   const [epic, setEpic] = useState([]);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState([]);
+  const [status, setStatus] = useState([]);
+  const [hours, setHours] = useState(" ");
   useEffect(() => {
     var url = "http://localhost:8000/userfetch";
     var request = {};
@@ -42,6 +46,26 @@ function AddTask() {
       })
       .catch();
   }, []);
+  function handleClick(e) {
+    console.log("hi");
+    var url = "http://localhost:8000/Taskinsert";
+    var req = {
+      txtTitle: title,
+      txtDescriotion: description,
+      txtStatus: status,
+      refassignee: 4,
+      refSprintId: sprint,
+    };
+    var header = {};
+    axios
+      .post(url, req, header)
+      .then((res) => {
+        console.log(res.data);
+        setUser(res.data);
+      })
+      .catch();
+    alert("Success");
+  }
   return (
     <div>
       <div className="outer">
@@ -67,43 +91,69 @@ function AddTask() {
           <div className="secondcolumn">
             <div className="buttonright">
               <label>AddTask</label>
-              <button>SAVE</button>
+              <button onClick={handleClick}>SAVE</button>
             </div>
             <div className="seccolumsecondrow">
               <div className="titleinput">
-                <lable>Title</lable><br></br>
-                <input  type="text"></input>
+                <lable>Title</lable>
+                <br></br>
+                <input
+                  type="text"
+                  onChange={(e) => {
+                    setTitle(e.target.value);
+                  }}
+                ></input>
               </div>
               <br></br>
               <div>
-                <lable className="titleinput">
-                   Description
-                </lable><br></br>
-                <input className="descriptioninput" type="text"></input>
-              </div>
-<br></br>
-<div className="statusin">
-                <label>Status</label>
+                <lable className="titleinput">Description</lable>
                 <br></br>
-                <select className="select1" id="status-select">
-                  <option value="">-- option--</option>
+                <input
+                  className="descriptioninput"
+                  type="text"
+                  onChange={(e) => {
+                    setDescription(e.target.value);
+                  }}
+                ></input>
+              </div>
+              <br></br>
+              <br></br>
+              <div className="statusin">
+                <label>Status</label>
+                
+                <select
+                  className="select1"
+                  id="status-select"
+                  onChange={(e) => {
+                    setStatus(e.target.value);
+                  }}
+                >
                   <option value="ToDo">ToDo</option>
                   <option value="InProgress">InProgress</option>
                   <option value="Review">Review</option>
                   <option value="Complete">Complete</option>
                 </select>
+
+                <label>Estimated Hours</label>
+
+                <input
+                  type="text"
+                  onChange={(e) => {
+                    setHours(e.target.value);
+                  }}
+                ></input>
               </div>
-              <br></br>
               <div className="assignuser">
                 <label>Assigned to</label>
                 <br></br>
+
                 <select
-                  onChange={(e) => {
+                  onSelect={(e) => {
                     setUser(e.target.value);
                   }}
                 >
                   {user.map((item, index) => {
-                    return <option>{item.txtUserName}</option>;
+                    return <option value={item.id}>{item.txtUserName}</option>;
                   })}
                 </select>
               </div>
@@ -111,7 +161,7 @@ function AddTask() {
                 <label>Sprint Name</label>
                 <br></br>
                 <select
-                  onChange={(e) => {
+                  onSelect={(e) => {
                     setSprint(e.target.value);
                   }}
                 >
@@ -128,7 +178,7 @@ function AddTask() {
                 <label>Epic Name</label>
                 <br></br>
                 <select
-                  onChange={(e) => {
+                  onSelect={(e) => {
                     setEpic(e.target.value);
                   }}
                 >

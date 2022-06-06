@@ -97,33 +97,35 @@ app.post("/Epiclistfetch", function (req, res) {
   });
   
   app.post("/Epicinsert", function (req, res) {
-    var c = req.body.id;
+    console.log("test")
+    //var c = req.body.id;
     var d = req.body.txtTitle;
 var e =req.body.txtDescription;
 var f =req.body.txtStatus;
-var g =req.body.dtEstStartDte;
-var h =req.body.dtEstEndtDte;
-var i =req.body.dtActStartDte;
-var j =req.body.dtActEndtDte;
-var k =req.body.refProjectId;
+//var g =req.body.dtEstStartDte;
+//var h =req.body.dtEstEndtDte;
+//var i =req.body.dtActStartDte;
+//var j =req.body.dtActEndtDte;
+var k =1;
 var l =req.body.refassignee;
-    var sql = "INSERT into tblepic (id,txtTitle,txtDescription,txtStatus,dtEstStartDte,dtEstEndtDte,dtActStartDte,dtActEndtDte,refProjectId,refassignee)values('"+c+"','"+d+"','"+e+"','"+f+"','"+g+"':'"+h+"','"+i+"','"+j+"','"+k+"','"+l+"')"; 
+    var sql = "INSERT into tblepic (txtTitle,txtDescription,txtStatus,refProjectId,refassignee)values('"+d+"','"+e+"','"+f+"','"+k+"','"+l+"')"; 
     con.query(sql, function (err, result, fields) {
       if (err) {
         throw err;
       } else {
         console.log(result);
-        res.send(result);
       }
     });
   });
 
   app.post("/updateEpic", function (req, res) {
+    var d = req.body.txtTitle;
+    var e =req.body.txtDescription;
     var m = req.body.txtStatus;
     var n = req.body.refassignee;
     var o = req.body.id;
-    
-    var sql ="update tblepic set  txtStatus='"+m+"',refassignee='"+n+"'where id='"+o+"'";
+    var k=1;
+    var sql ="update tblepic set txtTitle='"+d+"', txtDescription='"+e+"',txtStatus='"+m+"',refassignee='"+n+"',refProjectId='"+k+"' where id='"+o+"'";
     con.query(sql, function (err, result, fields) {
       if (err) {
         throw err;
@@ -163,9 +165,50 @@ var l =req.body.refassignee;
       }
     });
   });
+  app.post("/Taskinsert", function (req, res) {
+    console.log("test")
+    //var c = req.body.id;
+    var d = req.body.txtTitle;
+var e =req.body.txtDescriotion;
+var f =req.body.txtStatus;
+
+var k =3;
+var l =req.body.refassignee;
+var s=2;
+    var sql = "INSERT into tbltask (txtTitle,txtDescriotion,txtStatus,refEpicId,refassignee,refSprintId)values('"+d+"','"+e+"','"+f+"','"+k+"','"+l+"','"+s+"')"; 
+    con.query(sql, function (err, result, fields) {
+      if (err) {
+        throw err;
+      } else {
+        console.log(result);
+      }
+    });
+  });
+
+  app.post("/updateTask", function (req, res) {
+    var d = req.body.txtTitle;
+    var e =req.body.txtDescriotion;
+    var m = req.body.txtStatus;
+   
+    var k =3;
+    var n = req.body.refassignee;
+     var l =req.body.refassignee;
+     var s=2;
+    var sql ="update tbltask set txtTitle='"+d+"', txtDescriotion='"+e+"',txtStatus='"+m+"',refEpicId ='"+k+"',refassignee='"+n+"',refSprintId='"+s+"' where id=11";
+    con.query(sql, function (err, result, fields) {
+      if (err) {
+        throw err;
+      } else {
+        console.log(result);
+        res.send(result);
+      }
+    });
+  });
 
   var a= {txtTitle:'Task1',txtStatus:'To Do'}
   console.log (a.txtTitle);
+
+  
 
 app.listen(
   port,

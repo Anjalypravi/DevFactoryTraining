@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +7,10 @@ function Dash() {
   var navigate = useNavigate();
   const [array, setArray] = useState([]);
   const [task, setTask] = useState([]);
+  const [firstArray, setFirstArray] = useState([]);
+  const [secondArray, setSecondArray] = useState([]);
+  const [thirdArray, setThirdArray] = useState([]);
+  const [fourthArray, setFourthArray] = useState("hi");
   var temp;
   useEffect(() => {
     var url = "http://localhost:8000/userfetch";
@@ -17,34 +20,67 @@ function Dash() {
       .post(url, request, header)
       .then((res) => {
         setArray(res.data);
-        console.log("array"+JSON.stringify(array));
+        console.log("array" + JSON.stringify(array));
       })
       .catch();
   }, []);
 
   function tasklist(id) {
+    console.log("hello");
     var url = "http://localhost:8000/usertaskfetch";
+    var request = { id: id };
+    //console.log("anj"+request)
     var header = {};
-    var request = {"id": id };
-    console.log("id");
-    console.log("req" + JSON.stringify(request));
+    console.log(id);
+    console.log("a" + JSON.stringify(request));
 
     axios
       .post(url, request, header)
-       
-      .then((res) => {
-        console.log(res.data);
-        var len = res.data.length;
-        console.log("id");
-        temp = res.data;
-        console.log(temp);
-        console.log("temp" + JSON.stringify(temp));
-        setTask(res.data);
-        console.log("task" + JSON.stringify(task));
-      })
-      .catch();
-  }
 
+      .then((res) => {
+        console.log("res" + JSON.stringify(res.data));
+
+        var array1 = res.data;
+        console.log("array=>" + JSON.stringify(array1));
+        for (const element of array1) {
+          console.log("elemnt==>" + JSON.stringify(element));
+          if (element.txtStatus == "To Do")
+            setFirstArray([...firstArray, element]);
+            
+          else if (element.txtStatus == "InProgress")
+            setSecondArray([...secondArray, element]);
+          else if (element.txtStatus == "Review")
+            setThirdArray([...thirdArray, element]);
+          else if (element.txtStatus == "Complete")
+            setFourthArray([...thirdArray, element]);
+          break;
+          console.log("fi"+JSON.stringify(firstArray));
+          console.log(JSON.stringify(firstArray[" "]));
+        }
+      })
+
+      .catch();
+    //
+
+    console.log(firstArray);
+
+    //console.log(temp);
+    //console.log("anj" + JSON.stringify(temp));
+    // console.log(temp[0].txtTitle);
+
+    //console.log(temp[0].txtTitle);
+
+    console.log(secondArray);
+    console.log(thirdArray);
+    console.log(fourthArray);
+    //   // const [firstArray, setFirstArray] = useState({
+    //   //   data: [temp[0].txtTitle],
+    //   //   count: 1,
+    //   });
+    //setFirstArray(firstArray =>[...firstArray,temp[0].txtTitle]);
+    //firstArray.push.(temp[0].txtTitle);
+    //console.log(firstArray);
+  }
   function project() {
     navigate("/project");
   }
@@ -52,10 +88,12 @@ function Dash() {
     <div>
       <div className="outer">
         {/* USer name with icon */}
+{firstArray}
         <div className="firstrow">
           <div className="usericon"> </div>
           <label>User</label>
         </div>
+        {/* //{JSON.stringify(fourthArray)} */}
         <div className="secondrow">
           {/* Side navigation menu */}
 

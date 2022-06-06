@@ -6,6 +6,9 @@ function EditTask() {
   const [user, setUser] = useState([]);
   const [sprint, setSprint] = useState([]);
   const [epic, setEpic] = useState([]);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState([]);
+  const [status, setStatus] = useState([]);
   useEffect(() => {
     var url = "http://localhost:8000/userfetch";
     var request = {};
@@ -42,6 +45,20 @@ function EditTask() {
       })
       .catch();
   }, []);
+  function handleClick(e) {
+    console.log("hi");
+    var url = "http://localhost:8000/Taskinsert";      
+    var req = {txtTitle:title,txtDescriotion:description,txtStatus:status,refassignee:4,refSprintId:sprint};
+    var header = {};
+    axios
+    .post(url, req, header)
+    .then((res) => {
+      console.log(res.data);
+      setUser(res.data);
+          })
+    .catch();
+        alert('Success')
+};
   return (
     <div>
       <div className="outer">
@@ -67,7 +84,7 @@ function EditTask() {
           <div className="secondcolumn">
             <div className="buttonright">
               <label>EditTask</label>
-              <button>SAVE</button>
+              <button onClick={handleClick}>SAVE</button>
             </div>
             <div className="seccolumsecondrow">
               <div className="titleinput">
@@ -111,7 +128,7 @@ function EditTask() {
                 <label>Sprint Name</label>
                 <br></br>
                 <select
-                  onChange={(e) => {
+                  onSelect={(e) => {
                     setSprint(e.target.value);
                   }}
                 >
@@ -128,7 +145,7 @@ function EditTask() {
                 <label>Epic Name</label>
                 <br></br>
                 <select
-                  onChange={(e) => {
+                  onSelect={(e) => {
                     setEpic(e.target.value);
                   }}
                 >

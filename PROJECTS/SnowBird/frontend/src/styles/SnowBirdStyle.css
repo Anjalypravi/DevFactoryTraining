@@ -1,7 +1,7 @@
 /* loginPage*/
-body{
+/* body{
 overflow: hidden;
-}
+} */
 .Container {
   height: 100vh;
   width: 100%;
@@ -342,10 +342,21 @@ color: gray;
   margin-left: 12%;
 }
 .statusin label{
+  padding-right: 5px;
+  float: left;
   color: gray;
 }
 .statusin select{
-  width:70%;
+  padding-left: 3px;
+  float: left;
+  width:25%;
+    height: 5vh;
+}
+
+.statusin input{
+  display: flex;
+  float: 1% left;
+  width:30%;
     height: 5vh;
 }
 .sprintinput {
@@ -554,4 +565,13 @@ th {
   transition-property: all;
   transition-duration: 4s;
   transition-delay: 2s;
+}
+
+
+.drageAndDrop p {
+  background-color: red;
+  margin: 10px;
+  text-align: center;
+  padding: 10px;
+  color: white;
 }

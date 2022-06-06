@@ -9,7 +9,7 @@ import Dash from "./Dash.js"
 import AddTask from "./AddTask.js";
 import EditTask from "./EditTask.js";
 import Trial from "./Trial.js"
-// import DashDropdown from "./DashDropdown.js"
+import Dashdragdrop from "./Dashdragdrop.js"
 
 function Navigation(){
     return(
@@ -25,7 +25,7 @@ function Navigation(){
                 <Route path="/AddTask" element={<AddTask/>}></Route>
                 <Route path="/EditTask" element={<EditTask/>}></Route>
                 <Route path="/Trial" element={<Trial/>}></Route>
-                {/* <Route path="/DashDropdown" element={<DashDropdown/>}></Route> */}
+                <Route path="/Dashdragdrop" element={<Dashdragdrop/>}></Route>
             </Routes>
             </BrowserRouter>
         </div>

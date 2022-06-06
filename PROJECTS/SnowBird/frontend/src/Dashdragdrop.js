@@ -1,9 +1,9 @@
 import { useState } from "react";
-import "./styles/Style.css";
+import "./styles/SnowBirdStyle.css";
 
 function DragAndDrop() {
   const [firstArray, setFirstArray] = useState({
-    data: [temp[0].txtTitle],
+    data: ["Task1"],
     count: 1,
   });
   const [secondArray, setSecondArray] = useState({});
