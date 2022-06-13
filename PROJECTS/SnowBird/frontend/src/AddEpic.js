@@ -75,7 +75,7 @@ function AddEpic() {
                 <input className="descriptioninput" type="text" onChange={(e)=>{setDescription(e.target.value)}}></input>
               </div>
               <br></br>
-              <div className="statusin">
+              <div className="statusinlongwidth">
                 <label>Status</label>
                 <br></br>
                 <select className="select1" id="status-select" onChange={(e)=>{setStatus(e.target.value)}}>

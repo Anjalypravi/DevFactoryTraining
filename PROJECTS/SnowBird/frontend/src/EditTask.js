@@ -110,7 +110,7 @@ function EditTask() {
                   <option value="Review">Review</option>
                   <option value="Complete">Complete</option>
                 </select>
-                <input type="text" onChange={(e) => {
+                <input type="text" onSelect={(e) => {
                     setHours(e.target.value);
                   }}></input>
               </div>
@@ -119,7 +119,7 @@ function EditTask() {
                 <label>Assigned to</label>
                 <br></br>
                 <select
-                  onChange={(e) => {
+                  onSelect={(e) => {
                     setUser(e.target.value);
                   }}
                 >

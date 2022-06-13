@@ -21,7 +21,7 @@ function DragAndDrop() {
   };
   const handleDrop = (e) => {
     console.log(e);
-    e.preventDefault();
+    //e.preventDefault();
     var target = e.target.className;
     var startedDiv = dragElement.startedDiv;
     if (
