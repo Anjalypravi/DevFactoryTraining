@@ -5,6 +5,7 @@ const app = express();
 const port = 8000;
 app.use(express.json());
 const cors=require('cors');
+const { VARCHAR } = require("mysql/lib/protocol/constants/types");
 app.use(cors());
 
 var con = mysql.createConnection({
@@ -175,7 +176,8 @@ var f =req.body.txtStatus;
 var k =3;
 var l =req.body.refassignee;
 var s=2;
-    var sql = "INSERT into tbltask (txtTitle,txtDescriotion,txtStatus,refEpicId,refassignee,refSprintId)values('"+d+"','"+e+"','"+f+"','"+k+"','"+l+"','"+s+"')"; 
+var hrs=req.body.EstHours;
+    var sql = "INSERT into tbltask (txtTitle,txtDescriotion,txtStatus,refEpicId,refassignee,refSprintId,EstHours)values('"+d+"','"+e+"','"+f+"','"+k+"','"+l+"','"+s+"','"+hrs+"')"; 
     con.query(sql, function (err, result, fields) {
       if (err) {
         throw err;
@@ -194,7 +196,8 @@ var s=2;
     var n = req.body.refassignee;
      var l =req.body.refassignee;
      var s=2;
-    var sql ="update tbltask set txtTitle='"+d+"', txtDescriotion='"+e+"',txtStatus='"+m+"',refEpicId ='"+k+"',refassignee='"+n+"',refSprintId='"+s+"' where id=11";
+     var hrs=req.body.EstHours;
+    var sql ="update tbltask set txtTitle='"+d+"', txtDescriotion='"+e+"',txtStatus='"+m+"',refEpicId ='"+k+"',refassignee='"+n+"',refSprintId='"+s+"',EstHours='"+hrs+"' where id=11";
     con.query(sql, function (err, result, fields) {
       if (err) {
         throw err;
@@ -205,9 +208,7 @@ var s=2;
     });
   });
 
-  var a= {txtTitle:'Task1',txtStatus:'To Do'}
-  console.log (a.txtTitle);
-
+  
   
 
 app.listen(

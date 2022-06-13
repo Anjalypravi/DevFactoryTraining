@@ -49,7 +49,7 @@ function EditTask() {
   function handleClick(e) {
     console.log("hi");
     var url = "http://localhost:8000/Taskinsert";      
-    var req = {txtTitle:title,txtDescriotion:description,txtStatus:status,refassignee:4,refSprintId:sprint};
+    var req = {txtTitle:title,txtDescriotion:description,txtStatus:status,refassignee:4,refSprintId:sprint,EstHours:hours};
     var header = {};
     axios
     .post(url, req, header)

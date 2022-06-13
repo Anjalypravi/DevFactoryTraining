@@ -53,8 +53,9 @@ function AddTask() {
       txtTitle: title,
       txtDescriotion: description,
       txtStatus: status,
-      refassignee: 4,
+      refassignee: 7,
       refSprintId: sprint,
+      EstHours:hours
     };
     var header = {};
     axios
