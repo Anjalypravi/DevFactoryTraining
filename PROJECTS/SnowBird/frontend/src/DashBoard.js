@@ -8,7 +8,7 @@ import "./styles/SnowBirdStyle.css";
 function DashBoard() {
   const [array, setArray] = useState([]);
   const [task, setTask] = useState([]);
-  const [firstArray, setFirstArray] = useState([]);
+  const [firstArray, setFirstArray] = useState([ ]);
   const [secondArray, setSecondArray] = useState([]);
   const [thirdArray, setThirdArray] = useState([]);
   const [fourthArray, setFourthArray] = useState([]);
@@ -31,84 +31,113 @@ function DashBoard() {
   }, []);
 
   function setTaskClick(e, id) {
+    
     e.preventDefault();
-    alert("hi" + id);
+    
+     setFirstArray([ ]);
+    setSecondArray([ ]);
+    setThirdArray([ ]);
+    setFourthArray([ ]);
+    //alert("hi" + id);
     var url = "http://localhost:8000/usertaskfetch";
     var request = { id: id };
     var header = {};
     axios
       .post(url, request, header)
       .then((res) => {
+        console.log(res.data);
         setTask(res.data);
-        var array1 = task;
-   console.log("arr" + JSON.stringify(array1));
-  for (const element of array1) {
-   console.log("elemnt==>" + JSON.stringify(element));
-    if (element.txtStatus == "To Do") {
-      setFirstArray([...firstArray, element]);
-      console.log("here1" + JSON.stringify(firstArray));
-    }
-    else if (element.txtStatus == "InProgress"){
-            setSecondArray([...secondArray, element]);
-            console.log("here2" + JSON.stringify(secondArray));}
-            else if (element.txtStatus == "Review")
-           { setThirdArray([...thirdArray, element]);
-            console.log("here3" + JSON.stringify(thirdArray));}
-          else if (element.txtStatus == "Complete")
-           { setFourthArray([...fourthArray, element])
-            console.log("here4" + JSON.stringify(fourthArray));}
-            else{console.log("no task")}
-  }
+        var array1 = res.data;
+
+        console.log("arr" + JSON.stringify(array1));
+        for (const element of array1) {
+          console.log("elemnt==>" + JSON.stringify(element));
+          if (element.txtStatus == "To Do") {
+            var ab = [...firstArray];
+            setFirstArray([ab, element]);
+            // console.log("hh"+[JSON.stringify(...firstArray), element])
+            console.log("here1" + ab);
+          } else if (element.txtStatus == "InProgress") {
+            var bc = [...secondArray];
+            setSecondArray([bc, element]);
+            console.log("here2" + bc);
+          } else if (element.txtStatus == "Review") {
+            var cd = [...thirdArray];
+            setThirdArray([cd, element]);
+            console.log("here3" + cd);
+          } else if (element.txtStatus == "Complete") {
+            var ef = [...fourthArray];
+            setFourthArray([ef, element]);
+            console.log("here4" + ef);
+          } else {
+            console.log("no task");
+          }
+        }
       })
 
       .catch();
   }
- 
+
   const allowDrop = (e) => {
     e.preventDefault();
   };
   const handleDrop =(e) =>{
-    console.log(e);
+   // console.log(e);
+   //console.log(dragElement.item);
     var target=e.target.className;
     var startedDiv=dragElement.startedDiv;
+  
     if((target!=startedDiv) && (e.target.className=="taskbar1"||
     e.target.className=="taskbar2"||
     e.target.className=="taskbar3"||
     e.target.className=="taskbar4"))
     {
       if(startedDiv=="taskbar1")
-     { delete firstArray.data[dragElement.index];
+     { delete firstArray[dragElement.index];
      }else if (startedDiv == "taskbar2") {
-      delete secondArray.data[dragElement.index];
+      delete secondArray[dragElement.index];
     } else if (startedDiv == "taskbar3") {
-      delete thirdArray.data[dragElement.index];
+      delete thirdArray[dragElement.index];
     } else if (startedDiv == "taskbar4") {
-      delete fourthArray.data[dragElement.index];
+      delete fourthArray[dragElement.index];
     }
     if (target == "taskbar1") {
-      var temp = firstArray.data;
+      var temp = [...firstArray];
+      console.log("dragelement==>"+JSON.stringify(dragElement))
       temp.push(dragElement.item);
-      setFirstArray({ data: temp });
+      setFirstArray(temp);
     }
     else if (target == "taskbar2") {
-      var temp = secondArray.data;
-      temp.push(dragElement.item);
-      setSecondArray({ data: temp });
+      var temp = [...secondArray]
+      console.log("dragelement==>"+JSON.stringify(dragElement))
+      temp.push(dragElement.item); 
+      setSecondArray(temp);
+      
+      
+      
     }
     else if (target == "taskbar3") {
-      var temp = thirdArray.data;
+      var temp = [...thirdArray];
+      console.log("dragelement==>"+JSON.stringify(dragElement))
       temp.push(dragElement.item);
-      setThirdArray({ data: temp});
+      setThirdArray(temp);
     }
     if (target == "taskbar4") {
-      var temp = fourthArray.data;
+      var temp = [...fourthArray];
+      console.log("dragelement==>"+JSON.stringify(dragElement))
       temp.push(dragElement.item);
-      setFourthArray({ data: temp});
+      setFourthArray(temp);
     }
     }
-    
+
   }
-  const handleDrag =(e,index,startedDiv,item) => {setDragElement({index:index,startedDiv:startedDiv,item:item})};
+  const handleDrag = (e, index, startedDiv, item) => {
+    console.log(startedDiv);
+      console.log(index);
+    setDragElement({ index: index, startedDiv: startedDiv, item:item });
+   
+  };
+
   return (
     <div className="outer">
       {/* whole content in dashboard */}
@@ -152,63 +181,87 @@ function DashBoard() {
               </div>
             </div>
           </div>
+        
           <div className="statusnamerow">
             <label>TO DO</label>
             <label>InProgress</label>
             <label>Review</label>
             <label>Complete</label>
           </div>
-          <div className="tasks"></div>
-          <div className="taskbar1" 
-          >
-            {task.map((taskitem, taskindex) => {
-              if (taskitem.txtStatus == "To Do")
-                return (
-                  <>
-                    <p>{taskitem.txtTitle} 
-                    onDragOver={(e)=>allowDrop(e)};
-          onDrop{(e)=>handleDrop(e)};
-          {firstArray.data.map((item,index)=>{return(
-            <p
-            draggable="true"
-            onDragStart={(e)=>handleDrag(e,index,item)}>
-              {item}
-            </p>
-          )})}</p>
-                  </>
-                );
-            })}
-            
 
-          </div>
-          <div className="taskbar2">
-            {task.map((taskitem, taskindex) => {
-              if (taskitem.txtStatus == "InProgress")
-                return (
-                  <>
-                    <p>{taskitem.txtTitle}</p>
-                  </>
-                );
+         
+          <div className="tasks"></div>
+          <div className="taskbar1"
+          onDragOver={(e) => allowDrop(e)}
+          onDrop={(e) => handleDrop(e)}
+          >
+            {/* {JSON.stringify(firstArray)} */}
+            {firstArray.map((item, index) => {
+              return (
+                <>
+                  
+                  <p
+                    draggable="true"
+                    onDragStart={(e)=>handleDrag(e,index,"taskbar1",item)}
+                    >
+                     <p>{item.txtTitle}</p>
+                  </p>
+                  
+                </>
+              );
             })}
           </div>
-          <div className="taskbar3">
-            {task.map((taskitem, taskindex) => {
-              if (taskitem.txtStatus == "Review")
-                return (
-                  <>
-                    <p>{taskitem.txtTitle}</p>
-                  </>
-                );
+          <div className="taskbar2"
+          onDragOver={(e) => allowDrop(e)}
+          onDrop={(e) => handleDrop(e)}
+          >
+            {/* {JSON.stringify(secondArray)} */}
+            {secondArray.map((item, index) => {
+              return (
+                <>
+                  <p
+                    draggable="true"
+                    onDragStart={(e)=>handleDrag(e,index,"taskbar2",item)}
+                    >
+                     <p>{item.txtTitle}</p>
+                  </p>
+                </>
+              );
             })}
           </div>
-          <div className="taskbar4">
-            {task.map((taskitem, taskindex) => {
-              if (taskitem.txtStatus == "Complete")
-                return (
-                  <>
-                    <p>{taskitem.txtTitle}</p>
-                  </>
-                );
+          <div className="taskbar3"
+          onDragOver={(e) => allowDrop(e)}
+          onDrop={(e) => handleDrop(e)}
+          >
+            {/* {JSON.stringify(thirdArray)} */}
+            {thirdArray.map((item, index) => {
+              return (
+                <>
+                  <p
+                    draggable="true"
+                    onDragStart={(e)=>handleDrag(e,index,"taskbar3",item)}
+                    >
+                     <p>{item.txtTitle}</p>
+                  </p>
+                </>
+              );
+            })}
+          </div>
+          <div className="taskbar4"
+          onDragOver={(e) => allowDrop(e)}
+          onDrop={(e) => handleDrop(e)}>
+            {/* {JSON.stringify(fourthArray)} */}
+            {fourthArray.map((item, index) => {
+              return (
+                <>
+                  <p
+                    draggable="true"
+                    onDragStart={(e)=>handleDrag(e,index,"taskbar4",item)}
+                    >
+                     <p>{item.txtTitle}</p>
+                  </p>
+                </>
+              );
             })}
           </div>
         </div>

@@ -17,11 +17,13 @@ function DragAndDrop() {
   });
   const [dragElement, setDragElement] = useState({});
   const allowDrop = (e) => {
+    alert("hi")
     e.preventDefault();
   };
   const handleDrop = (e) => {
+    alert("hi");
     console.log(e);
-    //e.preventDefault();
+    e.preventDefault();
     var target = e.target.className;
     var startedDiv = dragElement.startedDiv;
     if (
@@ -62,9 +64,10 @@ function DragAndDrop() {
     }
   };
   const handleDrag = (e, index, startedDiv, item) => {
-    // console.log(startedDiv);
-    // console.log(index);
+     console.log(startedDiv);
+     console.log(index);
     setDragElement({ index: index, startedDiv: startedDiv, item: item });
+    console.log(dragElement);
   };
 
   return (

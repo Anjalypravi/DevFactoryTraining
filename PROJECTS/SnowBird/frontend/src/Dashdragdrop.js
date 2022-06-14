@@ -34,6 +34,12 @@ function DragAndDrop(){
         temp.push(dragElement.item);
         setArray2({ data: temp, count: temp.length });
       }
+      const handleDrag = (e, index, startedDiv, item) => {
+        // console.log(startedDiv);
+        // console.log(index);
+        setDragElement({ index: index, startedDiv: startedDiv, item: item });
+      };
+    
   };
 
 return(
