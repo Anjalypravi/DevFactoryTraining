@@ -1,0 +1,133 @@
+CREATE DATABASE PrjDB;
+/*******************************/
+CREATE TABLE tblUserRoles (
+	  id int NOT NULL AUTO_INCREMENT,
+      txtUserRole varchar(50) NOT NULL,
+      PRIMARY KEY(id)
+    );
+ /*******************************/  
+  CREATE TABLE tblUsers (
+    id int NOT NULL AUTO_INCREMENT,
+      txtUserName varchar (50) NOT NULL,
+       txtPassword	varchar(50) NOT NULL,
+	   refUserRole int NOT NULL,
+    PRIMARY KEY (id),
+    foreign key(refUserRole) REFERENCES tblUserRoles(id)
+);  
+  /*****************************************************/    
+    CREATE TABLE tblProjects (
+    id int NOT NULL AUTO_INCREMENT,
+      txtName varchar (50) NOT NULL,
+       txtType	varchar(50), 
+	   refProjectOwner int NOT NULL,
+    PRIMARY KEY (id),
+    foreign key(refProjectOwner) REFERENCES tblUsers(id)
+);  
+/*****************************************************/  
+    CREATE TABLE tblEpic (
+       id int NOT NULL AUTO_INCREMENT,
+       txtTitle varchar (50) NOT NULL,
+       txtDescription	varchar(150), 
+       txtStatus varchar(10) NOT NULL,
+       dtEstStartDte DATETIME,
+       dtEstEndtDte DATETIME,
+       dtActStartDte DATETIME,
+       dtActEndtDte DATETIME,
+	   refProjectId int NOT NULL,
+       refassignee int,
+    PRIMARY KEY (id),
+    foreign key(refProjectId) REFERENCES tblProjects(id),
+    foreign key(refassignee) REFERENCES tblUsers(id)
+    
+);
+/*****************************************************/  
+ CREATE TABLE tblSprint (
+       id int NOT NULL AUTO_INCREMENT,
+       txtSprintName varchar (50) NOT NULL,
+	   dtEstStartDte DATETIME,
+       dtEstEndtDte DATETIME,
+       dtActStartDte DATETIME,
+       dtActEndtDte DATETIME,
+	    PRIMARY KEY (id)
+          );      
+/*****************************************************/      
+CREATE TABLE tblTask (
+       id int NOT NULL AUTO_INCREMENT,
+       txtTitle varchar (50) NOT NULL,
+       txtDescriotion varchar(250),
+       txtStatus varchar(10) NOT NULL,
+	   dtEstStartDte DATETIME,
+       dtEstEndtDte DATETIME,
+       dtActStartDte DATETIME,
+       dtActEndtDte DATETIME,
+       refEpicId  INT NOT NULL,
+       refAssignee INT,
+       refSprintId INT,
+	    PRIMARY KEY (id),
+        foreign key(refEpicId) REFERENCES tblEpic(id),
+		foreign key(refSprintId) REFERENCES tblSprint(id),
+		foreign key(refAssignee) REFERENCES tblUsers(id)
+	);
+/*****************************************************/      
+    CREATE TABLE tblLogs (
+    id int NOT NULL AUTO_INCREMENT,
+      txtStatus varchar (10) NOT NULL,
+	   refTask int NOT NULL,
+       refUser int not null,
+       dtLoggedOn DATETIME NOT NULL,
+    PRIMARY KEY (id),
+    foreign key(refTask) REFERENCES tblTask(id),
+    foreign key(refUser) REFERENCES tblUsers(id)
+    );
+    
+/***************INSERT DATAS IN TO TABLES******************************/  
+INSERT INTO tblUserroles(txtUserRole)
+VALUES 
+('DIRECTOR'),
+('MANAGER'),
+('TEAMLEAD'),
+('EMPLOYEE');
+
+/*****************************************************/ 
+INSERT INTO tblUsers(txtUserName,txtPassword,refUserRole)
+VALUES
+('RAHUL','itzMe','1'),
+('CHITHRA','chith123','2'),
+('MANU','manu123','3'),
+('MANJU','manju123','3'),
+('REMYA','remya1994','4'),
+('KIRAN','KIRAN@1234','4');
+/*****************************************************/ 
+INSERT INTO tblProjects(txtName,txtType,refProjectOwner)
+VALUES
+('E-DEVICES','MANUFACTURING','1'),
+('E-COMMRCE','WEB DEVELOPMENT','1');
+/*****************************************************/ 
+INSERT INTO tblEpic(refProjectId,refassignee,txtTitle,txtDescription,txtStatus,dtEstStartDte,dtEstEndtDte, dtActStartDte,dtActEndtDte)
+
+VALUES
+('1','2','USERmanagement','Have to develop Prototype','Todo','2022-05-12','2022-05-12','2022-05-12','2022-05-12'),
+('1','3','employeemanagment','Have to develop web page only','Todo','2022-05-12','2022-05-12','2022-05-12','2022-05-12');
+   
+/*****************************************************/ 
+INSERT INTO tblSprint(txtSprintName, dtEstStartDte,dtEstEndtDte,dtActStartDte,dtActEndtDte )
+VALUES
+   ('sprint1','2022-05-12','2022-05-12','2022-05-12','2022-05-18'),
+   ('sprint2','2022-05-12','2022-05-12','2022-05-12','2022-05-18'),
+   ('Sprint3','2022-04-22','2022-05-15','2022-04-26','2022-05-18');
+  
+/*****************************************************/ 
+INSERT INTO tblTask(txtTitle,txtDescriotion,txtStatus,dtEstStartDte,dtEstEndtDte,dtActStartDte,dtActEndtDte,refEpicId,refAssignee,refSprintId)
+VALUES
+('Task1','dataflowmodel-starting of design part','Inprogress','2022-05-12','2022-05-12','2022-05-12','2022-05-12','3','2',2),
+('Task2','db creation-design and create table','To Do','2022-05-12','2022-05-12','2022-05-12','2022-05-12','4','1',1);
+
+	
+/*****************************************************/ 
+SELECT id,txtTitle,txtStatus,refProjectId from tblepic;
+
+INSERT INTO tblUsers(txtUserName,txtPassword,refUserRole)
+VALUES
+('AMMU','AMMU','4'),
+('DIVYA','DIVYA','4'),
+('KIRAN','KIRAN','4');

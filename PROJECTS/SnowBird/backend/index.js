@@ -55,6 +55,19 @@ app.post('/uservalidation', function (req, res) {
         });
       
 });
+/**************API for fetch complete tasks */
+app.post('/fetchtask', function (req, res) {
+  
+  var sql ="select ta.id,ta.txtTitle,ta.txtStatus,ep.txtTitle,pr.txtName from ((tbltask ta join tblepic ep on ta.refepicId=ep.id)join tblprojects pr on pr.id=ep.refProjectId) order by ta.id asc;"
+    
+
+  con.query(sql, function (err, result) {
+    if (err) throw err
+    else {
+      res.send(result)
+    }
+  })
+})
 
 
 app.post('/usertaskfetch', function (req, res) {
@@ -208,10 +221,6 @@ var hrs=req.body.EstHours;
     });
   });
 
-  var temp={
-    "txtTitle": "task1",
-    "txtStatus": "inprogress"
-  }
   
 
 

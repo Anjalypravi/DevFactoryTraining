@@ -6,14 +6,14 @@ function Menu() {
     navigate("/project");
   }
   function epic() {
-    navigate("/epic");
+    navigate("/Epic");
   }
   function board(){
       navigate("/");
   }
   function task()
   {
-      navigate("/task");
+      navigate("/Task");
   }
   function sprint()
   {
