@@ -178,6 +178,16 @@ var l =req.body.refassignee;
       }
     });
   });
+/************sprint fetch in sprint board */
+  app.post('/sprintboardfetch', function (req, res) {
+    var sql = " select distinct refSprintId from tbltask";
+    con.query(sql, function (err, result) {
+      if (err) throw err;
+      res.send(result);
+      console.log(result);
+    })
+  
+  })
   app.post("/Taskinsert", function (req, res) {
     console.log("test")
     //var c = req.body.id;
@@ -250,6 +260,28 @@ var hrs=req.body.EstHours;
       }
     })
   })
+
+  /**************API to insert To Do task in sprint********** */
+
+
+  /*********API to fetch fetch insert active sprints   */
+  app.post('/activesprintfetch', function (req, res) {
+
+    a=req.body.state;
+    var sql = "select txtSprintName from tblsprint where state='"+a+"'";
+    
+    con.query(sql, function (err, result) {
+      if (err) {
+          throw err;
+      }else
+      {
+      res.send(result);
+      console.log(result);
+      }
+    });
+  });
+
+
 app.listen(
   port,
   () => {

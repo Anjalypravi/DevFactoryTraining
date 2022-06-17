@@ -12,6 +12,7 @@ import Trial from "./Trial.js"
 import Dashdragdrop from "./Dashdragdrop.js"
 import DashBoard from "./DashBoard.js"
 import Tasks from "./Tasks.js"; 
+import SprintBoard from "./SprintBoard"; 
 
 function Navigation(){
     return(
@@ -30,6 +31,7 @@ function Navigation(){
                 <Route path="/Dashdragdrop" element={<Dashdragdrop/>}></Route>
                 <Route path="/DashBoard" element={<DashBoard/>}></Route>
                 <Route path="/Tasks" element={<Tasks/>}></Route>
+                <Route path="/SprintBoard" element={<SprintBoard/>}></Route>
                 
             </Routes>
             </BrowserRouter>
