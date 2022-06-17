@@ -12,16 +12,7 @@ function Epic() {
         <div className="secondrow">
           {/* Side navigation menu */}
           {<Menu/>}
-          <div className="firstcolumn">
-            <nav>
-              <li>Board</li>
-              <li>Projects</li>
-              <li>Epics</li>
-              <li>Tasks</li>
-              <li>Sprints</li>
-              <li>Users</li>
-            </nav>
-          </div>
+          
 
           {/* Main outline */}
           <div className="secondcolumn">

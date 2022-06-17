@@ -4,7 +4,7 @@ import { useNavigate } from "react";
 import "./styles/SnowBirdStyle.css";
 import Menu from './Menu'
 function EditTask() {
-  const [user, setUser] = useState([]);
+   const [user, setUser] = useState([]);
   const [sprint, setSprint] = useState([]);
   const [epic, setEpic] = useState([]);
   const [title, setTitle] = useState("");
@@ -31,8 +31,9 @@ function EditTask() {
       setTitle(res.data[0].txtTitle);
       setDescription(res.data[0].txtDescriotion);
       setStatus(res.data[0].txtStatus);
-      setHours(res.data[0].EstHours);
       setUser(res.data[0].txtUserName);
+      setHours(res.data[0].EstHours);
+      
       
     })
     .catch();
@@ -129,7 +130,7 @@ function EditTask() {
 <div className="statusin">
                 <label className="lb1">Status</label> <label className="lb2">Estimated Hours</label>
                 <br></br>
-                <select className="select1" value={status} onSelect={(e) => {
+                <select className="select1" value={status} onChange={(e) => {
                     setStatus(e.target.value);
                   }}id="status-select">
                   
@@ -147,14 +148,14 @@ function EditTask() {
                 <label>Assigned to</label>
                 <br></br>
                 <select  value={user}
-                  onSelect={(e) => {
+                  onChange={(e) => {
                     setUser(e.target.value);
                     
                   }}
                 >
-                  {user.map((item, index) => {
+                   {user.map((item, index) => {
                     return <option>{item.txtUserName}</option>;
-                  })}
+                  })}  
                 </select>
               </div>
               <div className="sprintinput">
