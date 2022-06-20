@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react";
-import "./styles/SnowBirdStyle.css";
-import Menu from './Menu';
+// import "./styles/SnowBirdStyle.css";
+import "./style/styles.css";
+import Menu from './Menu'
 function EditEpic() {
   const [user, setUser] = useState([]);
   const [title, setTitle] = useState("");
@@ -41,22 +42,14 @@ function EditEpic() {
     <div>
       <div className="outer">
         {/* USer name with icon */}
-        <div className="firstrow">
-          <div className="usericon"></div>
+        {/* <div className="firstrow">
+          <div className="usericon"> </div>
           <label>User</label>
-        </div>
+        </div> */}
         <div className="secondrow">
           {/* Side navigation menu */}
-          <div className="firstcolumn">
-            <nav>
-              <li>Board</li>
-              <li>Projects</li>
-              <li>Epics</li>
-              <li>Tasks</li>
-              <li>Sprints</li>
-              <li>Users</li>
-            </nav>
-          </div>
+
+          {<Menu />}
 
           {/* Main outline */}
           <div className="secondcolumn">
