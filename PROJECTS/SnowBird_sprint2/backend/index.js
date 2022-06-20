@@ -230,10 +230,10 @@ var hrs=req.body.EstHours;
     var e =req.body.txtDescriotion;
     var m = req.body.txtStatus;
    
-    var k =req.body.refEpicId;
+    var k =2;
 
     var n = req.body.refAssignee;
-     var l =req.body.refassignee;
+     
      var s=req.body.refSprintId;
      var hrs=req.body.EstHours;
     var sql ="update tbltask set txtTitle='"+d+"', txtDescriotion='"+e+"',txtStatus='"+m+"',refEpicId ='"+k+"',refassignee='"+n+"',refSprintId='"+s+"',EstHours='"+hrs+"' where id='1'";
@@ -243,7 +243,7 @@ var hrs=req.body.EstHours;
       } else {
         console.log(result);
         res.send(result);
-      }
+      }ss
     });
   });
 
