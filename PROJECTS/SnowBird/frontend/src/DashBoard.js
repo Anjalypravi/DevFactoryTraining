@@ -32,7 +32,7 @@ function DashBoard() {
 
   function setTaskClick(e, id) {
     
-    e.preventDefault();
+    // e.preventDefault();
     
      setFirstArray([ ]);
     setSecondArray([ ]);

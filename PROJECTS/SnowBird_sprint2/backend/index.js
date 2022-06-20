@@ -55,10 +55,25 @@ app.post('/uservalidation', function (req, res) {
         });
       
 });
+/*******API for user insert */
+app.post('/userinsert', function (req, res) {
+  a = req.body.txtUserName;
+  b=req.body.txtPassword;
+  c=req.body.refUserRole;
+  d=req.body.txtEmail;
+  e=req.body.contact;
+  var y = "INSERT INTO tblusers (txtUserName,txtPassword,refUserRole, txtEmail, contact) VALUES ('"+a+"', '"+b+"','"+c+"','"+d+"', '"+e+"');"
+    con.query(y, function (err, result, fields) {
+    if (err) throw err;
+    //console.log(result);
+    res.send(result);
+  });
+});
+
 /**************API for fetch complete tasks */
 app.post('/fetchtask', function (req, res) {
   
-  var sql ="select ta.id,ta.txtTitle,ta.txtStatus,ep.txtTitle as epictitle ,pr.txtName,tu.txtUserName,ts.txtSprintName,ep.txtTitle as etitle from ((((tbltask ta join tblepic ep on ta.refepicId=ep.id)join tblprojects pr on pr.id=ep.refProjectId)join tblusers tu on tu.id=ta.refAssignee)join tblsprint ts on ts.id=ta.refSprintId) order by ta.id asc";
+  var sql ="select ta.id,ta.txtTitle,ta.txtStatus,ep.txtTitle as epictitle ,pr.txtName from ((((tbltask ta join tblepic ep on ta.refepicId=ep.id)join tblprojects pr on pr.id=ep.refProjectId)join tblusers tu on tu.id=ta.refAssignee)join tblsprint ts on ts.id=ta.refSprintId) order by ta.id asc ";
   
   con.query(sql, function (err, result) {
     if (err) throw err
@@ -210,16 +225,18 @@ var hrs=req.body.EstHours;
   });
 
   app.post("/updateTask", function (req, res) {
+    var tid=req.body.id;
     var d = req.body.txtTitle;
     var e =req.body.txtDescriotion;
     var m = req.body.txtStatus;
    
-    var k =3;
-    var n = req.body.refassignee;
+    var k =req.body.refEpicId;
+
+    var n = req.body.refAssignee;
      var l =req.body.refassignee;
-     var s=2;
+     var s=req.body.refSprintId;
      var hrs=req.body.EstHours;
-    var sql ="update tbltask set txtTitle='"+d+"', txtDescriotion='"+e+"',txtStatus='"+m+"',refEpicId ='"+k+"',refassignee='"+n+"',refSprintId='"+s+"',EstHours='"+hrs+"' where id=11";
+    var sql ="update tbltask set txtTitle='"+d+"', txtDescriotion='"+e+"',txtStatus='"+m+"',refEpicId ='"+k+"',refassignee='"+n+"',refSprintId='"+s+"',EstHours='"+hrs+"' where id='1'";
     con.query(sql, function (err, result, fields) {
       if (err) {
         throw err;
@@ -282,6 +299,21 @@ var hrs=req.body.EstHours;
     });
   });
 
+/*************API to fetch To Do tasks in sprintboard */
+  
+app.post('/fetchToDotasks', function (req, res) {
+  var sid = req.body.id;
+  var sta=req.body.txtStatus;
+  // var sql ="select ta.txtTitle,ta.txtStatus,ep. from (tblsprint sp join tbltask ta on sp.id=ta.refSprintId)where sp.id='"+sid+"'and ta.txtStatus='To Do'";
+    var sql="select ta.txtTitle,ta.txtStatus,ep.txtTitle as epictitle ,pr.txtName from ((tbltask ta join tblepic ep on ta.refepicId=ep.id)join tblprojects pr on pr.id=ep.refProjectId)where ta.txtStatus='To Do' ";
+    
+  con.query(sql, function (err, result) {
+    if (err) throw err
+    else {
+      res.send(result)
+    }
+  })
+})
 
 app.listen(
   port,

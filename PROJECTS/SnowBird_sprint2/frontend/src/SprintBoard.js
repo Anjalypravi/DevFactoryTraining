@@ -6,6 +6,7 @@ import "./styles/Style.css";
 function SprintBoard(){
     const [sprintlist,setSprintList]=useState([]);
     const[state,setState]=useState("");
+    const [taskarray, settaskarray] = useState([])
     useEffect(()=>{
         
         var req={};
@@ -16,7 +17,24 @@ function SprintBoard(){
             console.log(JSON.stringify(res.data));
             setSprintList(res.data);
         }).catch();
+
+        
+            var url = 'http://localhost:8000/fetchtask'
+            var request = {}
+            var header = {}
+        
+            axios
+              .post(url, request, header)
+              .then((res) => {
+                console.log(res.data)
+                settaskarray(res.data)
+              })
+              .catch((err) => {
+                console.log(err)
+              })
+          
     },[])
+
     const checkChange=()=>{
         setState("checked");
 
@@ -52,30 +70,27 @@ function SprintBoard(){
         </div>
         <div className="task_row">
             <h3 style={{color:"gray"}}>Tasks</h3>
-            <table>
-            <thead>
-            <th style={{width:15}}>#id</th>
-            <th >Task</th>
-            <th>Status</th>
-            <th>Epic Name</th>
-            <th>Project Name</th>
-            </thead>
-            <tbody>
-                <tr>
-                <td>1</td>
-                <td>Task1</td>
-                <td>To-do</td>
-                <td>Epic1</td>
-                <td>Event Management</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Task2</td>
-                    <td>To-do</td>
-                    <td>Epic2</td>
-                    <td>Project Management</td>
-                </tr>
-            </tbody>
+            <table className="tablerow">
+              <tr className="TblFirstrow">
+                <th>#id</th>
+                <th>Task</th>
+                <th>Status</th>
+                <th>Epic</th>
+                <th>ProjectName</th>
+              </tr>
+              {taskarray.map((item, index) => {
+                return (
+                  <>
+                    <tr >
+                      <td className="tbdata">{item.id}</td>
+                      <td>{item.txtTitle}</td>
+                      <td>{item.txtStatus}</td>
+                      <td>{item.epictitle}</td>
+                      <td>{item.txtName}</td>
+                    </tr>
+                  </>
+                )
+              })}
             </table>
             <div className="pbutton">
                             <button>1</button>

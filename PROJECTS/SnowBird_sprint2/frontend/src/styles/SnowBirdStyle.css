@@ -321,8 +321,9 @@ color: gray;
   width: 70%;
   margin-left: 12%;
   margin-right: 5%;
-  height: 20vh;
+  height: 15vh;
   color: gray;
+  font-size: x-small;
 }
 
 
@@ -752,3 +753,104 @@ padding-left:70%;
   padding-left: 60%;
  padding-top: 3%;
 }
+/*****************signUp**************/
+.body{
+  margin: 0;
+  padding: 0;
+}
+.container{
+  background-color: rgb(212, 212, 195);
+  width: 100%;
+  height:100vh;
+  padding-top: 50px;
+}
+.innerdiv{
+  border: 1px solid cornsilk;
+  width: 70%;
+  margin-left: 20%;
+  background-color: rgb(175, 88, 88);
+  margin: top 50px;
+  padding: 40px 20px 70px 20px;
+  border-radius: 10px;
+  border-style:  solid;
+
+
+}
+.styleing button  {
+color: brown;
+background-color: blue;
+}
+.user{
+  width:80%;
+}
+.user input[type=text]
+{
+width: 250px;
+}
+.user input[type=password]
+{
+width: 250px;
+}
+
+.link{
+  color:blueviolet
+}
+.link :hover{
+  color: brown;
+}
+.header{
+  background-color:rgb(185, 147, 147);
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  width: 80%;
+}
+.fullpage{
+  background-color: rgb(25, 16, 150);
+  width: 100%;
+  height:100vh;
+  padding-top: 50px;
+  margin-left: 10%;
+}
+.oneinaline
+{
+width:98%;
+padding:5px;
+}
+.twoinaline{
+  width: 23%;
+  margin:10px;
+}
+.threeinaline{
+  width: 20%;
+  padding: top 5px;
+  padding-bottom:5px;
+}
+
+.right-btn { 
+  float: right; 
+  background-color: rgb(207, 153, 86);
+}
+.left-btn{
+  background-color: rgb(207, 153, 86);
+}
+.phone{
+  width:13%
+}
+.headings{
+  text-align: center;
+}
+.innerbox{
+  border-radius: 10px;
+  border: end start radius 50px;
+  border-style: solid;
+  /* padding-left: 10%; */
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.innerbox label{
+  color: gray;
+  font-size: medium;
+}
+

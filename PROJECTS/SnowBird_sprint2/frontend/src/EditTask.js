@@ -79,7 +79,7 @@ function EditTask() {
   function handleClick(e) {
     console.log("hi");
     var url = "http://localhost:8000/updateTask";      
-    var req = {txtTitle:title,txtDescriotion:description,txtStatus:status,refassignee:4,refSprintId:sprint,EstHours:hours};
+    var req = {txtTitle:title,txtDescriotion:description,txtStatus:status,refassignee:user,refSprintId:sprint,EstHours:hours};
     var header = {};
     axios
     .post(url, req, header)
@@ -161,8 +161,8 @@ function EditTask() {
               <div className="sprintinput">
                 <label>Sprint Name</label>
                 <br></br>
-                <select
-                  onSelect={(e) => {
+                <select 
+                  onChange={(e) => {
                     setSprint(e.target.value);
                   }}
                 >

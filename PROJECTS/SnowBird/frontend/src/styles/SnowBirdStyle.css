@@ -8,6 +8,7 @@ overflow: hidden;
   background-color: white;
   float: left;
   padding: 0%;
+  background-image: "url(./Img/test5.jpg)" ;
 }
 .Outerdiv {
   margin-top: 50px;
@@ -294,6 +295,9 @@ overflow: hidden;
   text-align: center;
   padding: 10px;
 }
+.trow{
+  height: 8vh;
+}
 .trow :hover {
   background-color: lightgrey;
 }
@@ -407,11 +411,14 @@ color:gray ;
 }
 pbutton {
   text-align: right;
+  float: right;
 }
 .pbutton button {
   border: none;
   background-color: white;
   text-align: right;
+  float: right;
+  padding-right: 10px;
 }
 .tablerow table {
   /* background-color: aqua; */
