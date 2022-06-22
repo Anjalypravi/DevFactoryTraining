@@ -2,18 +2,22 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react";
 import "./style/styles.css";
-import Menu from './Menu'
+import Menu from "./Menu";
 function AddTask() {
   const [user, setUser] = useState([]);
+  const [user1, setUser1] = useState();
   const [sprint, setSprint] = useState([]);
+  const [sprint1, setSprint1] = useState("");
   const [epic, setEpic] = useState([]);
+  const [epic1, setEpic1] = useState("");
   const [title, setTitle] = useState("");
-  const [description, setDescription] = useState([]);
+  const [description, setDescription] = useState("");
   const [status, setStatus] = useState([]);
+  const [status1, setStatus1] = useState("");
   const [hours, setHours] = useState(" ");
   useEffect(() => {
     var url = "http://localhost:8000/userfetch";
-    var request = {};
+    var request = "{}";
     var header = {};
     axios
       .post(url, request, header)
@@ -53,11 +57,13 @@ function AddTask() {
     var req = {
       txtTitle: title,
       txtDescriotion: description,
-      txtStatus: status,
-      refassignee: 7,
-      refSprintId: sprint,
-      EstHours:hours
+      txtStatus: status1,
+      refassignee: user1,
+      refSprintId: sprint1,
+      refEpicId: epic1,
+      EstHours: hours,
     };
+    console.log("rr" + JSON.stringify(req));
     var header = {};
     axios
       .post(url, req, header)
@@ -113,18 +119,28 @@ function AddTask() {
               <br></br>
               <br></br>
               <div className="statusin">
-                <label className="lb1">Status</label> <label className="lb2">Estimated Hours</label>
+                <label className="lb1">Status</label>{" "}
+                <label className="lb2">Estimated Hours</label>
                 <br></br>
-                <select className="select1" id="status-select">
+                <select
+                  className="select1"
+                  id="status-select"
+                  onChange={(e) => {
+                    setStatus1(e.target.value);
+                  }}
+                >
                   <option value="">-- option--</option>
-                  <option value="ToDo">ToDo</option>
-                  <option value="InProgress">InProgress</option>
-                  <option value="Review">Review</option>
-                  <option value="Complete">Complete</option>
+                  <option value={"ToDo"}>ToDo</option>
+                  <option value={"InProgress"}>InProgress</option>
+                  <option value={"Review"}>Review</option>
+                  <option value={"Complete"}>Complete</option>
                 </select>
-                <input type="text" onChange={(e) => {
+                <input
+                  type="text"
+                  onChange={(e) => {
                     setHours(e.target.value);
-                  }}></input>
+                  }}
+                ></input>
               </div>
               <br></br>
               <div className="assignuser">
@@ -132,8 +148,8 @@ function AddTask() {
                 <br></br>
 
                 <select
-                  onSelect={(e) => {
-                    setUser(e.target.value);
+                  onChange={(e) => {
+                    setUser1(e.target.value);
                   }}
                 >
                   {user.map((item, index) => {
@@ -145,35 +161,25 @@ function AddTask() {
                 <label>Sprint Name</label>
                 <br></br>
                 <select
-                  onSelect={(e) => {
-                    setSprint(e.target.value);
+                  onChange={(e) => {
+                    setSprint1(e.target.value);
                   }}
                 >
                   {sprint.map((item, index) => {
-                    return (
-                      <>
-                        <option>{item.txtSprintName}</option>
-                      </>
-                    );
-                  })}
+                    return  <option value={item.id}>{item.txtSprintName}</option>;
+                                      })}
                 </select>
               </div>
               <div className="epicinput">
                 <label>Epic Name</label>
                 <br></br>
                 <select
-                  onSelect={(e) => {
-                    setEpic(e.target.value);
+                  onChange={(e) => {
+                    setEpic1(e.target.value);
                   }}
                 >
                   {epic.map((item, index) => {
-                    return (
-                      <>
-                        <option>{item.txtTitle}</option>
-                        console.log(item.txtTitle);
-                      </>
-                    );
-                  })}
+                    return <option value ={item.id}>{item.txtTitle}</option>                   })}
                 </select>
               </div>
             </div>

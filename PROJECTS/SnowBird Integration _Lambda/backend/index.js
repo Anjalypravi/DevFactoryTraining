@@ -425,7 +425,7 @@ app.post('/userfetchforusers', function (req, res) {
 
 app.post("/Epiclistfetch", function (req, res) {
     
-  var sql = "SELECT txtTitle FROM tblepic;";
+  var sql = "SELECT ep.txtTitle,ep.id FROM tblepic ep join tbltasks ta on refEpicid=ep.id";
   con.query(sql, function (err, result, fields) {
     if (err) {
       throw err;
@@ -543,7 +543,7 @@ app.post('/sprintfetch', function (req, res) {
 app.post('/sprintfetch_task', function (req, res) {
 
     
-  var sql = "SELECT txtSprintName from tblsprints";
+  var sql = "select sp.txtSprintName,sp.id from tblsprints sp join tbltasks ta on refSprintid=sp.id;";
   con.query(sql, function (err, result) {
     if (err) {
         throw err;
@@ -693,9 +693,9 @@ app.post("/Taskinsert", function (req, res) {
 var e =req.body.txtDescriotion;
 var f =req.body.txtStatus;
 
-var k =3;
+var k =req.body.refEpicid;
 var l =req.body.refassignee;
-var s=2;
+var s=req.body.refSprintid;
 var hrs=req.body.EstHours;
   var sql = "INSERT into tbltasks (txtTitle,txtDescription,txtStatus,refEpicid,refAssignee,refSprintid,EstHours)values('"+d+"','"+e+"','"+f+"','"+k+"','"+l+"','"+s+"','"+hrs+"')"; 
   con.query(sql, function (err, result, fields) {

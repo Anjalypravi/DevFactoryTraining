@@ -121,7 +121,7 @@ function AddTask() {
               <br></br>
               <br></br>
               <div className="statusin">
-                <label className="lb1">Status</label> <label className="lb2">Estimated Hours</label>
+                <label className="lb1">Status</label> <label className="lb2">Story Point Estimation</label>
                 <br></br>
                 <select className="select1" id="status-select">
                   <option value="">-- option--</option>

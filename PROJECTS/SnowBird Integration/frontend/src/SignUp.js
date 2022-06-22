@@ -1,4 +1,4 @@
-import "./styles/SnowBirdStyle.css";
+//import "./styles/SnowBirdStyle.css";
 import { useNavigate } from "react";
 function SignUp() {
   
@@ -77,7 +77,7 @@ function SignUp() {
             
             
             <div><p></p></div>
-            <div><button class="left-btn" onClick={handleClick}> Register</button></div>
+            <div><button class="left-btn" > Register</button></div>
             </div>
         </div>
       </div>

@@ -1,0 +1,1077 @@
+body {
+  margin: 0 auto;
+  overflow: hidden;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: large;
+}
+.outer {
+  width: 100%;
+}
+
+.firstrow { 
+  width: 100%; 
+  display: flex;
+  background-color: rgb(2, 1, 51);
+  flex-direction: row; 
+  justify-content: space-between;
+  font-size: .9rem;
+  color: white;
+}
+.logodiv{
+  font-size: 2rem; 
+  margin: 15px 30px;
+  display: flex;
+  align-items: center;
+}
+.logodiv label{
+  font-size: 1.8rem;
+}
+.usericon {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin-top: 5px;
+  font-size: 2rem;
+  align-items: center; 
+  margin-right: 10px;
+}
+.popup{
+  position: absolute;
+  background-color: rgb(2, 1, 51);
+  margin-top: 80px; 
+  padding-top: 5px;
+  visibility: hidden;
+  margin-left: -60px;
+  transition: visibility .1s;
+}
+ 
+.usericon_icon:hover~.popup{
+  visibility: inherit;
+}
+.popup:hover{
+  visibility: inherit;
+}
+.popup label{ 
+  padding: 10px 30px;
+}
+.popup label:hover{ 
+  background-color: rgb(115, 114, 230);
+}
+.usericon label{
+  font-size: 1rem; 
+}
+.loginuser {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: white; 
+  background-color: white;
+}
+
+.firstcolumn {
+  width: 15%;
+  height: 100vh;
+  background-color: rgb(2, 1, 51);;
+  border-right: 1px solid black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .9rem;
+  float: left;
+}
+ 
+.firstcolumn li {
+  list-style: none;
+  text-align: left;
+  padding: 6%;  
+  padding-left: 30px;
+  color: white;
+}
+.firstcolumn li:hover {
+  color: white;
+  background-color: #666;
+}
+
+.menu_icon{
+  margin-right: 10px;
+}
+
+.secondcolumn {
+  width: 85%;  
+}
+.listcontainer{ 
+  width: 100%;
+}
+
+.usernamerow{
+  display: flex;
+  width: 50%; 
+  max-width: 50%;
+  margin-left: 25%;
+  overflow-x: scroll;
+}
+
+.usernamerow::-webkit-scrollbar {
+  height: 6px;
+  border-radius: 1px;
+  background-color: aqua;
+}
+.usernamerow::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #a3a3a3;
+}
+.taskbars{
+  width: 100%;
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-around;
+}
+.taskbars div{
+  min-width: 15%;
+}
+.eachuser{
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.draggablep{
+  background-color: rgb(2, 1, 51);
+  color: white; 
+  padding: 0;
+  margin: 0;
+  padding: 10px;
+}
+/* .firstrow label {
+  color: gray;
+  font-size: small;
+
+} */
+/* .loginuser label
+{
+  padding-top: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 20px;
+  text-align: center;
+  color:gray;
+  font-size:medium;
+
+} */
+.secondrow {
+  width: 100%;
+}
+
+.log_button button {
+  width: 20%;
+  padding: 1%;
+  margin-left: 15%;
+  font-weight: 700;
+}
+*/
+
+/* .users label
+{
+    text-align: center;
+    color: blue;
+} */
+.users {
+  height: 3vh;
+  width: 20px;
+  border-radius: 25px;
+  background-color: red;
+  margin: 30%;
+  padding: 10px;
+  margin-top: 10px;
+}
+/* .singleuser {
+  overflow-x: scroll;
+  padding-top: 10%;
+  margin-right: 20%;
+  
+} */ 
+.statusnamerow {
+  width: 100%; 
+  margin-top: 4%;
+  float: left;
+}
+.taskbar1 {
+  width: 95%;
+  height: 60vh;
+  border: 1px solid black;
+  float: left;
+}
+.taskbar2 {
+  width: 95%;
+  height: 60vh;
+  border: 1px solid black;
+  float: left;
+  margin-left: 3%;
+  position: static;
+}
+.taskbar3 {
+  width: 95%;
+  height: 60vh;
+  border: 1px solid black;
+  float: left;
+  margin-left: 3%;
+  position: static;
+}
+.taskbar4 {
+  width: 95%;
+  height: 60vh;
+  border: 1px solid black;
+  float: left;
+  margin-left: 3%;
+  position: static;
+}
+.t1 {
+  background-color: aquamarine;
+  width: 20%;
+  /* float: left; */
+}
+.t1 label {
+  color: blueviolet;
+  display: block;
+}
+.t2 {
+  background-color: burlywood;
+}
+.t2 label {
+  color: blue;
+  display: block;
+}
+.tasks {
+  width: 100%;
+  height: 50vh;
+  /* background-color: aqua; */
+  padding-top: 5%;
+  padding-left: 5%;
+}
+.statusnamerow label {
+  margin-left: 14%;
+} 
+
+/* Project  Styling */
+
+.prowone {
+  width: 80%;
+  height: 15vh;
+  /* background-color: aquamarine; */
+  /* border-bottom: 1px solid black; */
+  border-left: 5%;
+  padding-top: 5%;
+}
+.prowone label {
+  color: slategrey;
+  font-weight: 900;
+  font-size: x-large;
+  text-align: center;
+  padding-left: 5%;
+}
+.prowone button {
+  float: right;
+  background-color: #b2b2b2;
+  color: white;
+  border: none;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  width: 15%;
+}
+/* .tablerow table {
+  background-color: aqua; 
+  border-top: 1px solid gray;
+  padding-left:2%;
+  
+} */
+
+.tablerow {
+  /* border-top: 1px solid gray; */
+  width: 80%;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 50vh;
+}
+/* .tablerow th {
+  color: slategray;
+  border-bottom: 1px solid gray;
+  width: 20%;
+  
+} */
+/* .tablerow td {
+  color: slategray;
+  width: 45%;
+  border-bottom: 1px solid gray;
+  padding: 4%;
+} */
+.tablerow tr {
+  text-align: center;
+}
+
+.pbutton {
+  text-align: right;
+}
+.pbutton button {
+  border: none;
+  background-color: white;
+}
+.psecondrow {
+  width: 100%;
+  height: 10vh;
+
+  padding-left: 10%;
+}
+.titlerow {
+  width: 100%;
+  height: 10vh;
+}
+.titlerow input {
+  width: 70%;
+  height: 5vh;
+}
+.titlerow label {
+  color: gray;
+}
+.descriptiion {
+  width: 100%;
+  height: 25vh;
+}
+.descriptiion {
+  color: gray;
+}
+.descriptiion input {
+  width: 70%;
+  height: 20vh;
+}
+.typerow {
+  width: 100%;
+
+  height: 10vh;
+}
+.typerow select {
+  width: 70%;
+  height: 5vh;
+}
+.typerow label {
+  color: gray;
+}
+.ownerrow {
+  width: 100%;
+  height: 10vh;
+}
+.ownerrow select {
+  width: 70%;
+  height: 5vh;
+}
+.ownerrow label {
+  color: gray;
+}
+.ownerrow select {
+  color: grey;
+}
+.typerow select {
+  color: grey;
+}
+.tablerow thead.idth {
+  width: 10%;
+}
+.tablerow.nameth {
+  width: 20%;
+}
+/* .slider{
+  width:30%;
+  margin-left: 25%;
+  height: 150px;
+  overflow-x: scroll;
+  display: flex;
+  
+} */
+.project {
+  background-color: white;
+}
+.epic {
+  background-color: #d4cbcb;
+}
+.task {
+  background-color: #eee6e6;
+}
+.withborder {
+  border: 1px solid gray;
+  border-left: none;
+  border-right: none;
+}
+.right {
+  text-align: right;
+}
+.childbg {
+  background-color: #ededed;
+}
+.parentbg {
+  background-color: rgb(116, 116, 255);
+}
+.constant {
+  width: 5%;
+}
+table {
+  margin-top: 50px;
+  border-collapse: collapse;
+  width: 100%;
+}
+td,
+th {
+  font-size: 20px;
+  text-align: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.constant {
+  width: 10%;
+}
+.none {
+  display: none;
+}
+.display {
+  display: table-row;
+  transition-property: all;
+  transition-duration: 4s;
+  transition-delay: 2s;
+}
+
+.secondcolumn .secfirstrow {
+  width: 100%;
+}
+
+.secondcolumn .secsecondrow {
+  width: 100%;
+}
+.secondcolumn .secthirdrow {
+  width: 100%;
+  margin-left: 50px;
+  float: left;
+  border: 1px solid black;
+  border-left: 0;
+  border-right: 0;
+}
+.secthirdrow table {
+  width: 100%;
+  text-align: left;
+}
+
+.secthirdrow th {
+  text-align: left;
+  background-color: lightgray;
+}
+*/ .secondcolumn .secsecondrow button {
+  float: right;
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+  margin-bottom: 60px;
+  background-color: rgb(236, 203, 203);
+}
+
+.redcircle {
+  background-color: rgba(229, 125, 125, 0.909);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; 
+}
+.selectedredcircle {
+  background-color: red;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; 
+}
+
+.listcontainer::-webkit-scrollbar {
+  height: 6px;
+  border-radius: 2px;
+  background-color: #ededed;
+}
+
+
+.listcontainer::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #a3a3a3;
+}
+#fbox:checked + label {
+  text-decoration: line-through;
+}
+#fbox .label {
+  text-decoration: line-through;
+}
+
+#secbox:checked + label {
+  text-decoration: line-through;
+}
+#thirdbox:checked + label {
+  text-decoration: line-through;
+}
+#fourbox:checked + label {
+  text-decoration: line-through;
+}
+.lab {
+  padding-bottom: 10%;
+}
+.sprint {
+  width: 20%;
+  /* height:40vh; */
+  float: left;
+  margin-right: 0px;
+  margin-left: 3%;
+}
+.sprint label {
+  font-size: medium;
+  font-weight: 100;
+  color: gray;
+  width: 5%;
+}
+.sprint #todo,
+#inprogress,
+#review,
+#complete {
+  background-color: lightgrey;
+}
+
+.sprint1 {
+  width: 100%;
+  height: 25vh;
+  border: 1px solid black;
+  float: left;
+  margin-right: 10%;
+}
+.sprint_box {
+  width: 100%;
+  height: 30vh;
+}
+.task_row {
+  width: 100%;
+}
+.task_row td {
+  color: gray;
+  font-weight: 100;
+  font-size: medium;
+  width: 100px;
+  padding: 15px;
+  /* border-bottom: 1px solid black;  */
+}
+.task_row table {
+  text-align: center;
+  table-layout: fixed;
+  /* width: 80%; */
+  border-bottom: 1px solid gray;
+}
+.task_row th {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  color: gray;
+  font-weight: 100;
+  font-size: medium;
+  width: 100px;
+  padding: 15px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 2px;
+  height: 10px;
+  float: right;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: gray;
+  -webkit-transition: 0.2s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: blue;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: lightgray;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px lightgray;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.togglerow {
+  width: 5%;
+  height: 5vh;
+  padding-left: 70%;
+  /* background-color: pink;  */
+  /* padding-top: 4%; */
+}
+.togglerow label {
+  padding-left: 85%;
+  color: grey;
+  padding-left: 60%;
+  padding-top: 3%;
+}
+.toggle {
+  padding-left: 60%;
+  padding-top: 3%;
+}
+.report_rowone {
+  padding-top: 3%;
+  width: 100%;
+  /* height:11vh; */
+  /* background-color: aquamarine; */
+}
+.report_rowone select {
+  /* padding-left: 10%; */
+  margin-left: 10%;
+  color: gray;
+  border: 1px solid gray;
+  width: 10%;
+  height: 3vh;
+}
+.report_rowone label {
+  padding-left: 10%;
+}
+.report_rowone input {
+  margin-left: 10%;
+  width: 20%;
+  padding: 1%;
+  margin-top: 1%;
+}
+.report_rowone button {
+  margin-left: 5%;
+  width: 8%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+  border: white;
+  background-color: #b2b2b2;
+  color: white;
+}
+.report_secrow {
+  /* text-align: center; */
+  padding-left: 30%;
+  color: grey;
+}
+
+.report_secrow #FaDownload {
+  float: left;
+}
+.icons {
+  padding-left: 70%;
+  color: gray;
+
+  /* background-color: aqua; */
+  width: 100%;
+  /* height:5vh; */
+}
+
+.report_third {
+  width: 100%;
+}
+.report_third table {
+  margin-left: 10%;
+  /* border:1px solid black; */
+  border-bottom: 1px solid gray;
+  /* border-top: 1px solid gray; */
+
+  border-spacing: 50px 0;
+  width: 80%;
+}
+.report_third th {
+  /* border:1px solid black; */
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  color: gray;
+  font-weight: 100;
+  font-size: large;
+  width: 50px;
+}
+.report_third .time {
+  width: 150px;
+}
+.report_third td {
+  color: gray;
+  font-weight: 100;
+  font-size: medium;
+  /* padding: 10px 0; */
+  /* padding-right:100px; */
+  /* width: 20%; */
+}
+.fa_download {
+  border: 1px solid black;
+  width: 4%;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.dropdown {
+  margin-top: 0rem;
+}
+.dropdown li {
+  text-align: left;
+  /* display:none;  */
+  background-color: #e9d8d8;
+  /* display: block; */
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+.TblFirstrow {
+  width: 100%;
+}
+.tblId {
+  width: 20%;
+}
+.tblusers {
+  width: 20%;
+}
+.tblrole {
+  width: 24%;
+}
+.tbdata {
+  padding: 10px;
+}
+.Ttable {
+  width: 60%;
+}
+.TBL {
+  border: 1px;
+}
+.buttonright label {
+  color: slategrey;
+  font-weight: 900;
+  font-size: x-large;
+  text-align: center;
+  padding-left: 5%;
+  float: left;
+}
+
+.buttonright button {
+  float: right;
+  background-color: gray;
+  color: white;
+  border: none;
+  height: 5vh;
+  width: 10%;
+  margin-right: 9%;
+}
+.seccolumsecondrow {
+  padding-top: 5%;
+  width: 100%;
+  height: 100vh;
+
+  margin-top: 5px;
+}
+
+.seccolumsecondrow th {
+  width: 29%;
+  border-top: 10px;
+  border-bottom: 10px;
+  text-align: center;
+  padding: 20px;
+}
+
+.seccolumsecondrow td {
+  width: 29%;
+  border: none;
+  text-align: center;
+  padding: 10px;
+}
+
+.titleinput {
+  width: 100%;
+  height: 10vh;
+  margin-left: 12%;
+  color: gray;
+}
+.titleinput input {
+  width: 70%;
+  height: 5vh;
+}
+
+.descriptioninput {
+  width: 70%;
+  margin-left: 12%;
+  margin-right: 5%;
+  height: 20vh;
+  color: gray;
+}
+
+.assignuser {
+  width: 100%;
+  height: 10vh;
+  margin-left: 12%;
+}
+.assignuser select {
+  width: 70%;
+  height: 5vh;
+}
+.assignuser label {
+  color: gray;
+}
+.statusin {
+  width: 100%;
+  height: 10vh;
+  margin-left: 12%;
+}
+.lb1 {
+  float: left;
+  color: gray;
+  width: 35%;
+}
+.sprintinput {
+  width: 100%;
+  height: 10vh;
+  margin-left: 12%;
+}
+.sprintinput select {
+  width: 70%;
+  height: 5vh;
+}
+.sprintinput label {
+  color: gray;
+}
+.epicinput {
+  width: 100%;
+  height: 10vh;
+  margin-left: 12%;
+}
+.epicinput select {
+  width: 70%;
+  height: 5vh;
+}
+.epicinput label {
+  color: gray;
+}
+.secondcolumn {
+  width: 79%;
+  height: 100vh;
+  float: right;
+}
+.statusinlongwidth {
+  width: 100%;
+  height: 10vh;
+  margin-left: 12%;
+}
+.statusinlongwidth select {
+  width: 70%;
+  height: 5vh;
+}
+.Container {
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+  float: left;
+  padding: 0%;
+}
+.Outerdiv {
+  margin-top: 50px;
+  margin-left: 10px;
+  height: 60vh;
+  width: 20%;
+  background-color: lightgray;
+  float: left;
+  padding-top: 10px;
+  border-radius: 10px;
+  border: end start radius 50px;
+  border-style: solid;
+}
+.outerdiv.label {
+  margin-left: 20px;
+}
+.Username {
+  margin-left: 10px;
+  width: 80%;
+  height: 10vh;
+  padding-bottom: 1px;
+}
+.Username input {
+  width: 100%;
+}
+.Password {
+  margin-left: 10px;
+  width: 100%;
+  height: 10vh;
+  padding-bottom: 5px;
+}
+.Password input {
+  width: 80%;
+}
+
+.Newuser {
+  width: 80%;
+  color: blue;
+  height: 10vh;
+  float: left;
+  margin-left: 10px;
+  background-color: lightgrey;
+}
+.Newuser:hover {
+  color: blue;
+}
+.Login {
+  width: 100%;
+  height: 5vh;
+  float: left;
+  margin-left: 10px;
+  padding-top: 10px;
+}
+.Login button {
+  background-color: lightsteelblue;
+}
+.lb2 {
+  float: left;
+  color: gray;
+  width: 35%;
+  margin-left: 2%;
+}
+
+.login_container {
+  background-color: rgb(17, 116, 116);
+  width: 100%;
+  height: 100vh;
+  padding-top: 10vh;
+}
+
+.login_outerdiv {
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 10px;
+  width: 50%;
+  margin: 0px 25%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.login_outerdiv h2 {
+  color: rgb(17, 116, 116);
+}
+.login_element {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: 20px;
+  width: 80%;
+  margin-left: 10%;
+}
+.login_element input {
+  border-radius: 5px;
+  padding: 8px;
+  border: 1px solid rgb(17, 116, 116);
+  outline-color: rgb(17, 116, 116);
+}
+.login_element label {
+  font-size: 0.7rem;
+  color: rgb(17, 116, 116);
+}
+.login_element_button {
+  text-align: center;
+  margin-top: 20px;
+}
+.login_element_button button {
+  width: fit-content;
+  background-color: rgb(17, 116, 116);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.login_element_button button:hover {
+  background-color: rgb(24, 52, 52);
+}
+.statusin select {
+  padding-right: 3px;
+  float: left;
+  width: 35%;
+  height: 5vh;
+  margin-right: 2%;
+}
+
+.statusin input {
+  margin-left: 1%;
+  padding-left: 5px;
+  display: flex;
+  float: 1% left;
+  width: 32%;
+  height: 4vh;
+}
+
+/*************loader************/
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  margin: 8px;
+  border: 8px solid rgb(17, 116, 116);
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: rgb(17, 116, 116) transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.errormssg {
+  color: red;
+  font-size: 0.8rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
